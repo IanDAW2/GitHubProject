@@ -2,45 +2,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio continuo nº1</title>
+    <title>Ejercicio continuo nº2</title>
   </head>
-  <!-- Elabora una lista de contactos
-        Inicialmente tendra los valores de la tabla adjunta:
-        Declara e inicializa las variables donde se almacenara toda la informacion (nueve variables en total).
-        Muestra en la consola informacion sobre el primer y ultimo contacto en el formulario:
-        nombre/telefono/correo
-        Maxwell Wright/(0191) 719 6495/Curabitur.egestas.nunc@nonummyac.co.uk 
-        Raja Villareal/0866 398 2895/posuere.vulputate@sed.com 
-        Helen Richards/0800 1111/libero@convallis.edu -->
+  <!-- Crea la lista de contactos en un array, de tal manera que cada uno de sus elementos será un objeto que describa a un solo usuario (tres propiedades). 
+        Al final de la lista declarada de esta manera, agrega un nuevo contacto usando un método de array, apropiado. El nuevo contacto es: Maisie Haley / 0913 531 3030 / risus.Quisque@urna.ca.
+        Muestra el primer y último contacto, de nuevo en el formato: nombre / teléfono / correo electrónico. (length) -->
   <body>
     <script>
-      var nombre1 = "Maxwell Wright"
-      var nombre2 = "Raja Villareal"
-      var nombre3 = "Helen Richards"
-      var telefono1 = "(0191) 719 6495"
-      var telefono2 = "0866 398 2895"
-      var telefono3 = "0800 1111"
-      var correo1 = "Curabitur.egestas.nunc@nonummyac.co.uk"
-      var correo2 = "posuere.vulputate@sed.com "
-      var correo3 = "libero@convallis.edu"
+      let contactos = [
+        {
+          nombre: "Maxwell Wright",
+          telefono: "(0191) 719 6495",
+          correo: "Curabitur.egestas.nunc@nonummyac.co.uk",
+        },
+        {
+          nombre: "Raja Villareal",
+          telefono: "0866 398 2895",
+          correo: "posuere.vulputate@sed.com",
+        },
+        {
+          nombre: "Helen Richards",
+          telefono: "0800 1111",
+          correo: "libero@convallis.edu",
+        },
+      ]
+      contactos.push({
+        nombre: "Haley",
+        telefono: "0913 531 3030",
+        correo: "risus.Quisque@urna.ca",
+      })
 
-      // var contacto1 = [
-      //   "Maxwell Wright",
-      //   "(0191) 719 6495",
-      //   "Curabitur.egestas.nunc@nonummyac.co.uk",
-      // ]
-      // var contacto2 = [
-      //   "Raja Villareal",
-      //   "0866 398 2895",
-      //   "posuere.vulputate@sed.com ",
-      // ]
-      // var contacto3 = ["Helen Richards", "0800 1111", "libero@convallis.edu"]
-
-      console.log(nombre1 + "/", telefono1 + "/", correo1)
-      console.log(nombre3 + "/", telefono3 + "/", correo3)
-
-      telefono3 += 7
-      console.log(telefono3)
+      console.log()
     </script>
   </body>
 </html>
