@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 101_3.1</title>
+    <!-- 2. Define una variable global despedida=”Adiós” fuera de una función despedir( ) que muestre una ventana emergente con el valor de la variable despedida.
+    • Invoca la función
+    • Muestra la variable desde fuera de la función -->
+  </head>
+  <body>
+    <script>
+      const DESPEDIDA = "Adios"
+      function despedir() {
+        alert(DESPEDIDA)
+      }
+
+      despedir()
+      window.alert(DESPEDIDA) // Funciona por que es una variable global, por lo que se puede utilizar esa varibale en cualquier lado del programa
+    </script>
+  </body>
+</html>
