@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 101_3.3</title>
+    <!-- 3. Define dos variables con el mismo nombre y distinto valor: una fuera y otra dentro de una función ámbito() que muestre un window.alert de la misma. Muestra el valor de las dos mediante window.alert e invocando a la función. -->
+  </head>
+  <body>
+    <script>
+      function ambito() {
+        var saludo = "Hola"
+        window.alert(saludo)
+      }
+      var saludo = "Adios"
+
+      ambito()
+      window.alert(saludo)
+    </script>
+  </body>
+</html>
