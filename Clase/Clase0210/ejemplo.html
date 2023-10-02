@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo Script base.exponente</title>
+  </head>
+  <body>
+    <script>
+      let res = (base, exponente) => {
+        resultado = 1
+        for (let i = 0; i < exponente; i++) {
+          resultado *= base
+        }
+        exponente < 0 ? (resultado = 1 / resultado) : resultado
+        return resultado
+      }
+      // let res = (base, exponente) => {
+      //   return base ** exponente
+      // }
+      alert(res(prompt("Escribe la base"), prompt("Escribe el exponente")))
+    </script>
+  </body>
+</html>
