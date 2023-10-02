@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos JavaScript</title>
+  </head>
+  <body>
+    <script>
+      function tablaMultiplicar(tabla, fin = 10) {
+        for (let i = 0; i <= fin; i++) {
+          console.log(tabla, "x", i, "=", tabla * i)
+        }
+      }
+      function sumar(suma = 0) {
+        for (let i = 1; i < arguments.length; i++) {
+          suma += arguments[i]
+        }
+        console.log("La suma de todos los numeros es:", suma)
+      }
+      // tablaMultiplicar(2) // Tabla de multiplicar del 2 al 10
+      // tablaMultiplicar(6, 20) // Tabla de multiplicar del 6 al 20
+      sumar(2, 6, 8, 0, 4)
+    </script>
+  </body>
+</html>
