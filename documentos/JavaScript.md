@@ -1,0 +1,386 @@
+# JavaScript
+
+- [JavaScript](#javascript)
+- [Introduccion](#introduccion)
+  - [Inicio JavaScript](#inicio-javascript)
+  - [Reglas Basicas](#reglas-basicas)
+- [Variables](#variables)
+  - [Declaracion](#declaracion)
+    - [**Ejemplo de uso:**](#ejemplo-de-uso)
+  - [Constantes](#constantes)
+  - [Operadores fijos](#operadores-fijos)
+  - [Hoisting](#hoisting)
+  - [Operadores](#operadores)
+  - [Casting](#casting)
+  - [Metodos](#metodos)
+  - [Fechas](#fechas)
+    - [Funciones de tiempo](#funciones-de-tiempo)
+- [Funciones](#funciones)
+- [Estructuras de control](#estructuras-de-control)
+- [Errores](#errores)
+- [Objetos nativos](#objetos-nativos)
+- [Objetos del navegador](#objetos-del-navegador)
+- [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
+
+# Introduccion
+
+HTML (esqueleto), CSS (estilo, diseño) y JavaScript (fragmentos de codigo). Regulado por ECMAº
+
+---
+
+## Inicio JavaScript
+
+Lenguaje de programacion del lado del cliente: se ejecuta en el navegador del cliente(_salvo excepciones..._), **NO** en el servidor.
+
+- Interpretado
+- Orientado a objetos
+- Basado en objetos con funciones
+- Imperativo
+- Estructurado
+- Tipicacion debil
+- Tipicacion dinamica
+- Tecnica **_Compilacion Just In Time_** que consiste en compilar fragmento de codigo durante la ejecucion
+- No se suele utilizar para hacer calculos
+
+---
+
+  **Ejemplo de JavaScript incrustado en HTML**
+
+```JS
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primera practica</title>
+    <!-- Creacion de Funcion de JS -->
+    <script>
+      function hola() {
+        alert("Hola   ");
+      }
+      hola();
+    </script>
+  </head>
+  <body>
+    <h1>Este es el primer HTML con JS incrustado</h1>
+    <!-- Para utilizar las funciones primero necesitamos la etiqueta de HTML "<script>" -->
+    <script>
+      hola();
+    </script>
+    <h1>Este es la segunda cabezera</h1>
+    <script>
+      hola();
+    </script>
+  </body>
+</html>
+```
+
+---
+
+## Reglas Basicas
+
+- Recomendable utilizar el punto y coma al final de cada linea.
+- Se pueden agrupar varias instrucciones en la misma linea separandolas con ";".
+- Los decimales con ".".
+- var o let declaran las variables. No es imprescindible.
+- Operador de asignacion "=". En versiones posteriores "\*\*", "++" y "--".
+- Los bloques de codigo se delimitan con {}.
+- Recomendado camelCase para definicion de variables.
+
+---
+
+# Variables
+
+Espacio de memoria a la que se le asigna un nombre y guarda un valor.
+Valores de tipo Object o ...
+
+---
+
+## Declaracion
+
+Se declaran con var asignandole o no un valor
+
+```JS
+var nombre
+var nombre= "Juan"; //Se decalara y SE ASIGNA valor
+nombre = 'Pepe';
+var nombre = "Juan", apellido='Garcia', apellido2="Lopez";
+var nombreApellido = "Juan"+ "" + "Garcia";
+var nombreApellido = nombre + "" + apellido;
+var edad = nacimiento = 13; //no completo
+```
+
+La version de ES6 incluyo el uso de let. Permite declarar una variable limitando su alcance al bloque donde se este usando.
+
+---
+
+###  **Ejemplo de uso**
+    
+```HTML
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos variables</title>
+    <script>
+      var primeraVariable = "Declarada fuera del bloque";
+      function miFuncion() {
+        var primeraVariable =
+          "Declarada dentro de la funcion con el mismo nombre";
+        console.log(primeraVariable);
+        return 0; //Se llama igual pero solo existe dentro de la funcion
+      }
+      console.log(primeraVariable);
+    </script>
+  </head>
+  <body>
+    <script>
+      {
+        var primeraVariable = "Visible fuera del bloque";
+        let segundaVariable = "No visible fuera del bloque";
+      }
+      console.log(primeraVariable);
+      console.log(segundaVariable);
+      miFuncion();
+    </script>
+  </body>
+</html>
+```
+
+---
+
+## Constantes
+
+Son variables inicializadas a un valor especifico y que no pueden redeclararse.
+
+```JS
+  const nombre = 'Cristina' // A lo largo de la ejecucion no va a variar su valor
+  let texto = 'Hello world!'
+  var cantidad = 'Palabra'
+```
+
+---
+
+**Use strict**
+
+Obliga a declarar las variables
+
+- Sin _use strict_ se utiliza Javascript en modo "poco riguroso", o "sloppy mode"
+- No todos los navegadores lo permiten
+- Al poner esta sentencia al principio del codigo el interprete avisara si se usa una varibale sin declarar
+
+---
+
+## Operadores fijos
+
+Sirven para conocer de que tipo es una variable o un dato; y si un objeto es instancia de otro, respectivamente.
+
+- **Typeof** devuelve una cadena que indica el tipo de operando que hay despues sin evaluarlo
+- **Instaceof** verfica si un objeto se corresponde con el tipo de dato indicado a continuacion
+
+---
+
+## Hoisting
+
+Es un mecanismo que consiste en que el interprete de JavaScript escanea el programa antes de ejecutarlo, buscando errores en su sintaxis
+
+---
+
+## Operadores
+
+```JS
+  let x = 1
+  let y = ++x // Primero suma y luego asigna
+  let z = y++ + x // Asigna y luego suma
+  x == y // Comparacion sin tener en cuenta el tipo
+  x === y // Comparacion teniendo en cuenta el tipo
+  x = y // Asignacion
+  x += y // Suma y asigna
+  x -= y // Resta y asigna
+
+  const port = process.env.PORT || 5000 // Asignacion por defecto ||
+
+  (Condicion) ? Resultado_cierto : Resultado_falso // Operador ternario
+  let votante = (edad >18)? "Puede votar":"No puede votar" // Ejemplo Operador ternario
+
+  let year = 2050
+  let newYear = year = 2051; // Se ejecuta de derecha a izquierda
+  // Es lo mismo que:
+  let year = 2050
+  year = 2051
+  let newYear = year
+
+  // Funciones de conversion:
+  String()
+  Number()
+  // Tambien existen
+  parseInt()
+  parseFloat()
+  toDateString()
+  toUTCString()
+
+  // Conversiones implicitas
+  "0" == true // es false
+  "0.1e1" == true // es true
+  "false" == false // es false
+
+  // Coercion
+  const STR1 = 42 + "1" // Se convierte a string
+  console.log(STR1) // 421
+  console.log(typeof STR1) //string
+  const STR2 = 42 - "1" // Se convierte a number
+  console.log(STR2) // 41
+  console.log(typeof STR2) // number
+
+  1 == "1" // true
+  1 == "one" // false
+  true == 1 // true
+  false == "zero" // false
+  "test" == { x: "test" } // false
+
+  1 + 1 // 2
+  1 + "1" // 11
+  "hello" + " world" // "hello world"
+  "It's " + true // "It's true"
+  "pizza" + { cheese: "extra" } // "pizza [object Object]"
+
+  3 - 2 // 1
+  "3" - 2 // 1
+  3 - true // 2
+  1 - { x: 3 } // NaN (Not a Number)
+  "fun" - 2 // NaN
+
+  isNaN()
+  Infinity
+  -Infinity
+
+```
+
+---
+
+## Casting
+
+Es lo que llamamos como cambiar una variable de tipo
+
+---
+
+## Metodos
+
+- Metodo **toString()**
+```js
+nombreVariable.toString()
+```
+
+- Metodo **toFixed()**
+
+```js
+var numero = 9.99
+numero.toFixed(0) // devuelve 10
+numero.toFixed(1) // devuelve 10.0
+numero.toFixed(2) // devuelve 9.99
+numero.toFixed(3) // devuelve 9.990
+```
+
+---
+
+- Metodo **toPrecision()**
+
+```js
+var numero = 9.99
+numero.toPrecision(0) // devuelve 10
+numero.toPrecision(1) // devuelve 1e+1
+numero.toPrecision(2) // devuelve 10.
+numero.toPrecision(3) // devuelve 9.99.
+```
+
+---
+
+- **Window.prompt**
+
+Si no se introduce valor, guarda "null" en la variable
+
+```JS
+let libroLeido = prompt("¿Cual es el titulo del ultimo libro que has leido?", default)
+```
+
+_Nota:_ **window.confirm** ( solicitud de confirmacion **window.alert** )
+
+---
+
+## Fechas
+
+Hay cuatro formatos de fechas
+
+```JS
+  var v = new Date("11/23/2022") //Formato corto
+  var v = new Date("Ago 17 2022") //Formato largo
+  var v = new Date("Mon, Jun 20 2022 15:42:32 GMT+0100(W. Euro standard Time)") //Formato completo
+  var v = new Date("2022/08/18") //Formato ISO
+```
+
+---
+### Funciones de tiempo
+
+Es necesario utilizar funciones(metodos) para mostrar la hora de forma mas habitual:
+
+- **getHours()**
+- **getMinutes()**
+- **getSeconds()**
+
+---
+
+# Funciones
+
+Estructua de declaracion mas habitual:
+
+```JS
+  function nombreFuncion(param1, param2){
+    // Sentencias de codigo
+    return 0; // puede hacer algun retorno o no
+  }
+```
+
+---
+- Variantes
+  - Hay funciones sin parametros
+  - Pueden devolver un dato o no
+  - Se puede escribir una funcion sin el parentesis y guardarla en una variable
+  - Existen las funciones sin nombre(Funcion anonima)
+  - En JS las funciones son un tipo de datos mas ppor lo que podemos hacer cosas como pasarlas por argumento o asignarlas a una variable
+
+---
+```JS
+const CUADRADO = function(value){
+  return value * value
+}
+function aplica_fn(dato,funcion_a_aplicar){
+  return funcion_a_aplicar(dato)
+}
+aplica_fn(3,CUADRADO) // Devolvera 9 (3^2)
+```
+
+Si se proporcionan menos argumentos de los que requiere la funcion el resultado es NaN(No es numero), y si se proporcionan mas argumentos de los que requiere la funcion se guardan en una matriz llamada "**arguments[]**"
+
+---
+- Funciones flecha: permiten definir de manera compacta una funcion convencional.
+
+```JS
+
+var diHola = (name) => `¡Hola ${name}`
+var diAdios = (name) => {
+  return `Adios ${name}`
+}
+console.log(diHola('Cris'))
+console.log(diAdios('Cris'))
+
+```
+
+---
+# Estructuras de control
+
+# Errores
+
+# Objetos nativos
+
+# Objetos del navegador
+
+# Objetos definidos por el usuario
