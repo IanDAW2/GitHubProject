@@ -2,4 +2,4 @@
 
 ## Repositorio para el curso 23-24 de Ian Burford
 
-![Documentacion JavaScript](documentos/JavaScript.md)
+[![Documentación JavaScript](documentos/JavaScript.md)](https://cdn.icon-icons.com/icons2/2669/PNG/512/file_javascript_icon_161332.png)
