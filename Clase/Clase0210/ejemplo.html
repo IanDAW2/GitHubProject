@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +7,11 @@
   <body>
     <script>
       let res = (base, exponente) => {
-        resultado = 1
-        for (let i = 0; i < exponente; i++) {
-          resultado *= base
+        var resultado = 1
+        for (let i = 0; i < (exponente < 0 ? -exponente : exponente); i++) {
+          resultado = exponente < 0 ? resultado / base : resultado * base
         }
-        exponente < 0 ? (resultado = 1 / resultado) : resultado
+
         return resultado
       }
       // let res = (base, exponente) => {
