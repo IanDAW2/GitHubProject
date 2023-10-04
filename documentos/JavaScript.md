@@ -6,7 +6,7 @@
   - [Reglas Basicas](#reglas-basicas)
 - [Variables](#variables)
   - [Declaracion](#declaracion)
-    - [**Ejemplo de uso:**](#ejemplo-de-uso)
+    - [**Ejemplo de uso**](#ejemplo-de-uso)
   - [Constantes](#constantes)
   - [Operadores fijos](#operadores-fijos)
   - [Hoisting](#hoisting)
@@ -32,6 +32,7 @@ HTML (esqueleto), CSS (estilo, diseño) y JavaScript (fragmentos de codigo). Reg
 
 Lenguaje de programacion del lado del cliente: se ejecuta en el navegador del cliente(_salvo excepciones..._), **NO** en el servidor.
 
+---
 - Interpretado
 - Orientado a objetos
 - Basado en objetos con funciones
@@ -78,8 +79,8 @@ Lenguaje de programacion del lado del cliente: se ejecuta en el navegador del cl
 
 ## Reglas Basicas
 
-- Recomendable utilizar el punto y coma al final de cada linea.
-- Se pueden agrupar varias instrucciones en la misma linea separandolas con ";".
+- Se pueden agrupar varias instrucciones en la misma linea separandolas con ";". 
+- ";" No es obligatorio para los finales de linea.
 - Los decimales con ".".
 - var o let declaran las variables. No es imprescindible.
 - Operador de asignacion "=". En versiones posteriores "\*\*", "++" y "--".
