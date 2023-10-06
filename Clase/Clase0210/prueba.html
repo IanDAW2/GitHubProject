@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejemplo prueba</title>
+  </head>
+  <body>
+    <script>
+      let res = (base, exponente) => {
+        let resultado = 1
+        for (
+          let i = 1;
+          i <= (exponente >= 0 ? exponente : exponente * -1);
+          i++
+        ) {
+          resultado *= base
+        }
+        return exponente > 0 ? resultado : 1 / resultado
+      }
+
+      // Ejemplos de uso:
+      console.log(res(2, 3)) // 8
+      console.log(res(5, -2)) // 0.04
+      console.log(res(10, 0))
+    </script>
+  </body>
+</html>
