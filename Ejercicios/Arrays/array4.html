@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Arrays</title>
+  </head>
+  <body>
+    <h1>Ejemplo de Metodos de Arrays con Socios</h1>
+    <script>
+      var socios = []
+      for (let i = 0; i < 10; i++) {
+        socios.push(prompt("Dime el nombre del socio nº" + (i + 1)))
+      }
+      console.log(`Nombre de los socios: ${socios.toString()}`)
+      console.log(`Hay ${socios.length} socios`)
+      var socioAlfabetico = socios.sort()
+      console.log(
+        `Nombre de los socios alfabeticamente: ${socioAlfabetico.toString()}`
+      )
+      var socioRevertido = socios.reverse()
+      console.log(
+        `Nombre de los socios introduccion revertida: ${socioRevertido.toString()}`
+      )
+      const CREAR_PARRAFO = (texto) => {
+        let p = document.createElement("p")
+        p.textContent = texto
+        return p
+      }
+      const BODY = document.body
+      BODY.append(CREAR_PARRAFO(`Nombre de los socios: ${socios.toString()}`))
+      BODY.append(CREAR_PARRAFO(`Hay ${socios.length} socios`))
+      BODY.append(
+        CREAR_PARRAFO(
+          `Nombre de los socios alfabeticamente: ${socioAlfabetico.toString()}`
+        )
+      )
+      BODY.append(
+        CREAR_PARRAFO(
+          `Nombre de los socios  introduccion revertida: ${socioRevertido.toString()}`
+        )
+      )
+    </script>
+  </body>
+</html>
