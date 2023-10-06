@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba numero aleatorio</title>
+  </head>
+  <body>
+    <script>
+      const NUM_RANDOM = Math.ceil(Math.random() * 10)
+      var intentos = 1
+      var numUsuario = parseInt(prompt("Prueba suerte a adivinar el numero"))
+      while (NUM_RANDOM !== numUsuario) {
+        if (NUM_RANDOM > numUsuario) {
+          numUsuario = parseInt(prompt("El numero introducido es menor"))
+          intentos++
+        } else {
+          numUsuario = parseInt(prompt("El numero introducido es menor"))
+          intentos++
+        }
+      }
+      alert(
+        "Enhorabuena el numero a adivinar era el " +
+          NUM_RANDOM +
+          ", has tenido exito en el intento " +
+          intentos
+      )
+    </script>
+  </body>
+</html>
