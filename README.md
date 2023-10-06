@@ -4,4 +4,4 @@
 
 ### Teoria de JavaScript
 
-[![Documentancion de JavaScript](image.png)](documentos/JavaScript.md)
+[![Documentancion de JavaScript](documentos/image.png)](documentos/JavaScript.md)
