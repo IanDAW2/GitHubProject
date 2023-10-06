@@ -17,6 +17,14 @@
     - [Funciones de tiempo](#funciones-de-tiempo)
 - [Funciones](#funciones)
 - [Estructuras de control](#estructuras-de-control)
+  - [**if**](#if)
+  - [**elseif**](#elseif)
+  - [**switch**](#switch)
+  - [**for**](#for)
+  - [**while**](#while)
+  - [**do while**](#do-while)
+  - [Arrays (Vectores)](#arrays-vectores)
+    - [Metodos](#metodos-1)
 - [Errores](#errores)
 - [Objetos nativos](#objetos-nativos)
 - [Objetos del navegador](#objetos-del-navegador)
@@ -33,6 +41,7 @@ HTML (esqueleto), CSS (estilo, diseño) y JavaScript (fragmentos de codigo). Reg
 Lenguaje de programacion del lado del cliente: se ejecuta en el navegador del cliente(_salvo excepciones..._), **NO** en el servidor.
 
 ---
+
 - Interpretado
 - Orientado a objetos
 - Basado en objetos con funciones
@@ -45,7 +54,7 @@ Lenguaje de programacion del lado del cliente: se ejecuta en el navegador del cl
 
 ---
 
-  **Ejemplo de JavaScript incrustado en HTML**
+**Ejemplo de JavaScript incrustado en HTML**
 
 ```JS
 <html lang="es">
@@ -79,7 +88,7 @@ Lenguaje de programacion del lado del cliente: se ejecuta en el navegador del cl
 
 ## Reglas Basicas
 
-- Se pueden agrupar varias instrucciones en la misma linea separandolas con ";". 
+- Se pueden agrupar varias instrucciones en la misma linea separandolas con ";".
 - ";" No es obligatorio para los finales de linea.
 - Los decimales con ".".
 - var o let declaran las variables. No es imprescindible.
@@ -114,8 +123,8 @@ La version de ES6 incluyo el uso de let. Permite declarar una variable limitando
 
 ---
 
-###  **Ejemplo de uso**
-    
+### **Ejemplo de uso**
+
 ```HTML
 <html lang="es">
   <head>
@@ -267,6 +276,7 @@ Es lo que llamamos como cambiar una variable de tipo
 ## Metodos
 
 - Metodo **toString()**
+
 ```js
 nombreVariable.toString()
 ```
@@ -319,6 +329,7 @@ Hay cuatro formatos de fechas
 ```
 
 ---
+
 ### Funciones de tiempo
 
 Es necesario utilizar funciones(metodos) para mostrar la hora de forma mas habitual:
@@ -341,6 +352,7 @@ Estructua de declaracion mas habitual:
 ```
 
 ---
+
 - Variantes
   - Hay funciones sin parametros
   - Pueden devolver un dato o no
@@ -349,6 +361,7 @@ Estructua de declaracion mas habitual:
   - En JS las funciones son un tipo de datos mas ppor lo que podemos hacer cosas como pasarlas por argumento o asignarlas a una variable
 
 ---
+
 ```JS
 const CUADRADO = function(value){
   return value * value
@@ -362,6 +375,7 @@ aplica_fn(3,CUADRADO) // Devolvera 9 (3^2)
 Si se proporcionan menos argumentos de los que requiere la funcion el resultado es NaN(No es numero), y si se proporcionan mas argumentos de los que requiere la funcion se guardan en una matriz llamada "**arguments[]**"
 
 ---
+
 - Funciones flecha: permiten definir de manera compacta una funcion convencional.
 
 ```JS
@@ -376,8 +390,122 @@ console.log(diAdios('Cris'))
 ```
 
 ---
+
 # Estructuras de control
 
+---
+
+## **if**
+
+```js
+if (param) {
+  // codigo
+} else {
+  // no es obligatorio
+  // codigo
+}
+```
+
+---
+
+## **elseif**
+
+```js
+if (param) {
+  // codigo
+} else if { // segunda condicion
+  // codigo
+} else{
+  //codigo
+}
+```
+
+---
+
+## **switch**
+
+```js
+switch (param) {
+  case valor: // se pueden poner tantos case como se requiera
+    // codigo
+    break // linea para romper el switch y que no haga mas  comprobaciones de los demas casos
+
+  default: // equivalente a un else, si no es ningun caso, reliza este bloque
+    // codigo
+    break
+}
+```
+
+---
+
+## **for**
+
+```js
+for (let index = 0; index <= valor; index++ /*index--*/) {
+  // Codigo en bucle
+}
+
+array.forEach((clave) => {
+  // codigo en bucle de los valores de un array
+})
+
+for (const key in object) {
+  if (Object.hasOwnProperty.call(object, key)) {
+    const element = object[key]
+  }
+}
+```
+
+---
+
+## **while**
+
+```js
+while (param) {
+  // codigo en bucle, comprueba la condicion y realiza el codigo
+}
+```
+
+---
+
+## **do while**
+
+```js
+do {
+  // codigo en bucle, no comprueba hasta que realize el codigo al menos 1 vez
+} while (param)
+```
+
+---
+
+## Arrays (Vectores)
+
+Es un conjunto de elementos a los que se accede por un indice.
+
+```html
+<p id="aqui"></p>
+<script>
+  const DIAS = ["lunes", "martes", "jueves", viernes]
+  DIAS[1] = Date()
+  document.getElementById("aqui").innerHTML = DIAS
+  console.log(DIAS)
+</script>
+```
+### Metodos
+- **.join()** 
+- **.sort**
+- **.toString()**
+- **.split()**
+- **pop y shift**
+- **delete**
+- **push y unshift**
+- **splice**
+- **slice**
+- **concat**
+- **copyWithin**
+
+---
+ 
 # Errores
 
 # Objetos nativos
