@@ -4,5 +4,4 @@
 
 ### Teoria de JavaScript
 
-[![Documentación JavaScript|50](https://cdn.icon-icons.com/icons2/2669/PNG/512/file_javascript_icon_161332.png)](documentos/JavaScript.md)
-
+[![Documentancion de JavaScript](image.png)](documentos/JavaScript.md)
