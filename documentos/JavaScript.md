@@ -1,6 +1,5 @@
-# JavaScript
-
-- [JavaScript](#javascript)
+# INDICE
+- [INDICE](#indice)
 - [Introduccion](#introduccion)
   - [Inicio JavaScript](#inicio-javascript)
   - [Reglas Basicas](#reglas-basicas)
@@ -491,21 +490,26 @@ Es un conjunto de elementos a los que se accede por un indice.
   console.log(DIAS)
 </script>
 ```
+
+---
+
 ### Metodos
-- **.join()** 
+
+- **.join()**
 - **.sort**
+- **.reverse**
 - **.toString()**
 - **.split()**
-- **pop y shift**
+- **.pop() y .shift()**: pop borra la ultima y shift la primera
 - **delete**
-- **push y unshift**
-- **splice**
-- **slice**
-- **concat**
+- **.push() y .unshift()**: push añade alfinal y unshift al inicio del array
+- **.splice()**: (2, 0, "50", "90"); from index 2, delete 0, then insert 50 and 90
+- **.slice()**: (1, 2) fron index 1, delete 2 elements
+- **.concat()**: añade uno o mas arrays
 - **copyWithin**
 
 ---
- 
+
 # Errores
 
 # Objetos nativos
