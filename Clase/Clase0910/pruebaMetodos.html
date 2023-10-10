@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodos de los arrays</title>
+  </head>
+  <body>
+    <h1>Prueba de metodos</h1>
+    <script>
+      var personas = [
+        { nombre: "Ian", edad: 20 },
+        { nombre: "Andrea", edad: 24 },
+        { nombre: "Sandra", edad: 34 },
+        { nombre: "Alvaro", edad: 18 },
+        { nombre: "Pablo", edad: 10 },
+      ]
+
+      let personasOrdenado = personas.sort(function (persona1, persona2) {
+        return persona1.edad - persona2.edad
+      })
+
+      let arrowFunctionPersonasOrdenado = personas.sort(
+        (persona1, persona2) => {
+          return persona1.edad - persona2.edad
+        }
+      )
+      let arrowFunctionPersonasOrdenadoNombre = personas.sort(
+        (persona1, persona2) => {
+          return persona1.nombre.localeCompare(persona2.nombre)
+        }
+      )
+
+      console.log(personasOrdenado)
+      console.log(arrowFunctionPersonasOrdenado)
+      console.log(arrowFunctionPersonasOrdenadoNombre)
+    </script>
+  </body>
+</html>
