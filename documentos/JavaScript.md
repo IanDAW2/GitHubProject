@@ -1,4 +1,5 @@
 # INDICE
+
 - [INDICE](#indice)
 - [Introduccion](#introduccion)
   - [Inicio JavaScript](#inicio-javascript)
@@ -24,6 +25,7 @@
   - [**do while**](#do-while)
   - [Arrays (Vectores)](#arrays-vectores)
     - [Metodos](#metodos-1)
+  - [Desestructuración](#desestructuración)
 - [Errores](#errores)
 - [Objetos nativos](#objetos-nativos)
 - [Objetos del navegador](#objetos-del-navegador)
@@ -357,7 +359,7 @@ Estructua de declaracion mas habitual:
   - Pueden devolver un dato o no
   - Se puede escribir una funcion sin el parentesis y guardarla en una variable
   - Existen las funciones sin nombre(Funcion anonima)
-  - En JS las funciones son un tipo de datos mas ppor lo que podemos hacer cosas como pasarlas por argumento o asignarlas a una variable
+  - En JS las funciones son un tipo de datos mas por lo que podemos hacer cosas como pasarlas por argumento o asignarlas a una variable
 
 ---
 
@@ -509,6 +511,47 @@ Es un conjunto de elementos a los que se accede por un indice.
 - **copyWithin**
 
 ---
+
+## Desestructuración
+
+Consiste en deshacer una estructura en elementos individuales.
+
+```js
+const matriz = [5, 6]
+const [first, final] = matriz // first = 5, last = 6
+
+const matriz = [5, 4, 3, 2]
+const [first, third] = matriz // first = 5, last = 3, rest = discard
+
+const matriz = [4]
+const [first, second] = matriz // first = 4, second = undefined
+```
+
+En la parte derecha los [] indican que se trata de un **array**, pero en la parte izquierda se utilizan para indicar que se hace una **desestructuración**
+
+```js
+// desagrupa
+const debug = (param) => {
+  console.log(...param)
+}
+const matriz = [1, 2, 3, 4, 5]
+debug(matriz)
+
+// agrupa
+const debug1 = (...param) => {
+  console.log(param)
+}
+debug1(5, 4, 3, 2, 1)
+
+// el resto
+const elements = [5, 4, 3, 2]
+const [first, ...rest] = elements // first = 5, rest = [4,3,2]
+
+// Ejemplo dentro de arrays
+const pareja = [3, 4]
+const completo = [1, 2, ...pareja, 5]
+console.log(completo)
+```
 
 # Errores
 
