@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diferencias entre bucles for</title>
+  </head>
+  <body>
+    <script>
+      const hoy = [3, 4, 7, , { nombre: "juan", apellidos: "garcia" }]
+
+      console.log("for");
+      // for normal
+      for (let indice = 0; indice < hoy.length; indice++) {
+        console.log(hoy[indice])
+      }
+      
+      console.log("\n");
+      console.log("for in");
+      // for in
+      for (const key in hoy) {
+        console.log(hoy[key])
+      }
+      
+      console.log("\n");
+      console.log("for of");
+      // for of
+      for (const iterator of hoy) {
+        console.log(iterator)
+      }
+      
+      console.log("\n");
+      console.log("for each");
+      // for each
+      hoy.forEach((element) => {
+        console.log(element)
+      })
+
+    </script>
+  </body>
+</html>
