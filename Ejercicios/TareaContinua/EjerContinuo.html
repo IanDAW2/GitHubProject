@@ -36,26 +36,60 @@
         telefono: "0913 531 3030",
         correo: "risus.Quisque@urna.ca",
       })
-      contactos.push({
-        nombre: prompt("Escribe el nombre del nuevo contacto"),
-        telefono: prompt("Escribe el telefono del nuevo contacto"),
-        correo: prompt("Escribe el correo del nuevo contacto"),
-      })
 
-      let contacto1 = contactos[0]
-      let contacto2 = contactos[contactos.length - 1]
+      bucle: while (true) {
+        console.log(
+          "1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Añadir un nuevo contacto\n4. Salir"
+        )
+        switch (parseInt(prompt("Elige que quieres hacer"))) {
+          case 1:
+            let primerContacto = contactos[0]
+            console.log(
+              contacto1.nombre + " /",
+              contacto1.telefono + " /",
+              contacto1.correo
+            )
+            break
 
-      console.log(
-        contacto1.nombre + " /",
-        contacto1.telefono + " /",
-        contacto1.correo
-      )
+          case 2:
+            let ultimoContacto = contactos[contactos.length - 1]
+            console.log(
+              contacto2.nombre + " /",
+              contacto2.telefono + " /",
+              contacto2.correo
+            )
+            break
 
-      console.log(
-        contacto2.nombre + " /",
-        contacto2.telefono + " /",
-        contacto2.correo
-      )
+          case 3:
+            let nombre = prompt("Escribe el nombre del nuevo contacto")
+            let telefono = prompt("Escribe el telefono del nuevo contacto")
+            let correo = prompt("Escribe el correo del nuevo contacto")
+            if (nombre == null) {
+              console.log()
+              break
+            } else if (telefono == null) {
+              console.log()
+              break
+            } else if (correo == null) {
+              console.log()
+              break
+            }
+
+            contactos.push({
+              nombre: nombre,
+              telefono: telefono,
+              correo: correo,
+            })
+            break
+
+          case 4:
+            console.log("Cerrando Programa")
+            break bucle
+          default:
+            console.log("Ha ocurrio algun error porfavor intentelo de nuevo")
+            break
+        }
+      }
     </script>
   </body>
 </html>
