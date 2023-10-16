@@ -509,6 +509,7 @@ Es un conjunto de elementos a los que se accede por un indice.
 - **.slice()**: (1, 2) fron index 1, delete 2 elements
 - **.concat()**: añade uno o mas arrays
 - **copyWithin**
+- **reduce**
 
 ---
 
