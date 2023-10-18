@@ -41,101 +41,107 @@
         correo: "risus.Quisque@urna.ca",
       })
 
-      bucle: while (true) {
-        var menu =
-          "1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Añadir un nuevo contacto\n4. Salir"
+      var menu =
+        "1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Añadir un nuevo contacto"
 
-        switch (parseInt(prompt(menu, "Elige que quieres hacer"))) {
-          case 1: // Visualiar el primer contacto
-            let primerContacto = contactos[0]
+      switch (parseInt(prompt(menu, "Elige que quieres hacer"))) {
+        case 1: // Visualiar el primer contacto
+          let primerContacto = contactos[0]
 
-            console.log(
-              "Primer Contacto: ",
-              primerContacto.nombre + " /",
-              primerContacto.telefono + " /",
-              primerContacto.correo
+          console.log(
+            "Primer Contacto: ",
+            primerContacto.nombre + " /",
+            primerContacto.telefono + " /",
+            primerContacto.correo
+          )
+
+          // insertamos en HTML el primer contacto
+          PARRAF.innerHTML =
+            "Primer Contacto: " +
+            primerContacto.nombre +
+            " / " +
+            primerContacto.telefono +
+            " / " +
+            primerContacto.correo
+          BODY.appendChild(PARRAF)
+          break
+
+        case 2: // Visualizar el ultimo contacto
+          let ultimoContacto = contactos[contactos.length - 1]
+
+          console.log(
+            ultimoContacto.nombre + " /",
+            ultimoContacto.telefono + " /",
+            ultimoContacto.correo
+          )
+
+          // insertamos en HTML el ultimo contacto
+          PARRAF.innerHTML =
+            "Ultimo Contacto: " +
+            ultimoContacto.nombre +
+            " / " +
+            ultimoContacto.telefono +
+            " / " +
+            ultimoContacto.correo
+          BODY.appendChild(PARRAF)
+          break
+
+        case 3: // Añadir un nuevo contacto
+          let nombreContactoNuevo = prompt(
+            "Escribe el nombre del nuevo contacto"
+          )
+
+          // Comprobamos si el nombre ha sido introducido
+          while (nombreContactoNuevo == null || nombreContactoNuevo === "") {
+            nombreContactoNuevo = prompt(
+              "No se ha introducido el nombre del nuevo contacto, prueba de nuevo"
             )
+          }
 
-            // insertamos en HTML el primer contacto
-            PARRAF.innerHTML =
-              "Primer Contacto: " +
-              primerContacto.nombre +
-              " / " +
-              primerContacto.telefono +
-              " / " +
-              primerContacto.correo
-            BODY.appendChild(PARRAF)
-            break
-
-          case 2: // Visualizar el ultimo contacto
-            let ultimoContacto = contactos[contactos.length - 1]
-
-            console.log(
-              ultimoContacto.nombre + " /",
-              ultimoContacto.telefono + " /",
-              ultimoContacto.correo
+          let telefonoContactoNuevo = prompt(
+            "Escribe el telefono del nuevo contacto"
+          )
+          // Comprobamos si el telefono ha sido introducido
+          while (
+            telefonoContactoNuevo == null ||
+            telefonoContactoNuevo === ""
+          ) {
+            telefonoContactoNuevo = prompt(
+              "No se ha introducido el telefono del nuevo contacto, prueba de nuevo"
             )
+          }
 
-            // insertamos en HTML el ultimo contacto
-            PARRAF.innerHTML =
-              "Ultimo Contacto: " +
-              ultimoContacto.nombre +
-              " / " +
-              ultimoContacto.telefono +
-              " / " +
-              ultimoContacto.correo
-            BODY.appendChild(PARRAF)
-            break
-
-          case 3: // Añadir un nuevo contacto
-            let nombreContactoNuevo = prompt(
-              "Escribe el nombre del nuevo contacto"
+          let correoContactoNuevo = prompt(
+            "Escribe el correo del nuevo contacto"
+          )
+          // Comprobamos si el correo ha sido introducido
+          while (correoContactoNuevo == null || correoContactoNuevo === "") {
+            correoContactoNuevo = prompt(
+              "No se ha introducido el correo del nuevo contacto, prueba de nuevo"
             )
+          }
 
-            // Comprobamos si el nombre ha sido introducido
-            while (nombreContactoNuevo == null || nombreContactoNuevo === "") {
-              nombreContactoNuevo = prompt(
-                "No se ha introducido el nombre del nuevo contacto, prueba de nuevo"
-              )
-            }
+          contactos.push({
+            nombre: nombreContactoNuevo,
+            telefono: telefonoContactoNuevo,
+            correo: correoContactoNuevo,
+          })
 
-            let telefonoContactoNuevo = prompt(
-              "Escribe el telefono del nuevo contacto"
-            )
-            // Comprobamos si el telefono ha sido introducido
-            while (
-              telefonoContactoNuevo == null ||
-              telefonoContactoNuevo === ""
-            ) {
-              telefonoContactoNuevo = prompt(
-                "No se ha introducido el telefono del nuevo contacto, prueba de nuevo"
-              )
-            }
+          // insertamos en HTML el ultimo contacto
+          PARRAF.innerHTML =
+            "Nuevo Contacto: " +
+            nombreContactoNuevo +
+            " / " +
+            telefonoContactoNuevo +
+            " / " +
+            correoContactoNuevo +
+            "\n<br/> Creado Correctamente"
+          BODY.appendChild(PARRAF)
 
-            let correoContactoNuevo = prompt(
-              "Escribe el correo del nuevo contacto"
-            )
-            // Comprobamos si el correo ha sido introducido
-            while (correoContactoNuevo == null || correoContactoNuevo === "") {
-              correoContactoNuevo = prompt(
-                "No se ha introducido el correo del nuevo contacto, prueba de nuevo"
-              )
-            }
-
-            contactos.push({
-              nombre: nombreContactoNuevo,
-              telefono: telefonoContactoNuevo,
-              correo: correoContactoNuevo,
-            })
-            break
-
-          case 4:
-            alert("Cerrando Programa")
-            break bucle
-          default: // Si no se ha introducido un numero no valido o una cadena de texto, lanzamos mensaje de error
-            alert("Ha ocurrio algun error por favor intentelo de nuevo")
-            break
-        }
+          break
+        default: // Si no se ha introducido un numero no valido o una cadena de texto, lanzamos mensaje de error
+          alert("Ha ocurrio algun error por favor intentelo de nuevo")
+          break
       }
     </script>
   </body>
