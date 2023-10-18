@@ -14,6 +14,9 @@
           Si falta al menos uno de los tres valores (nombre, teléfono o correo electrónico), no se agrega el contacto. -->
   <body>
     <script>
+      const BODY = document.body
+      const PARRAF = document.createElement("p")
+
       let contactos = [
         {
           nombre: "Maxwell Wright",
@@ -31,6 +34,7 @@
           correo: "libero@convallis.edu",
         },
       ]
+
       contactos.push({
         nombre: "Haley",
         telefono: "0913 531 3030",
@@ -38,55 +42,98 @@
       })
 
       bucle: while (true) {
-        console.log(
+        var menu =
           "1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Añadir un nuevo contacto\n4. Salir"
-        )
-        switch (parseInt(prompt("Elige que quieres hacer"))) {
-          case 1:
+
+        switch (parseInt(prompt(menu, "Elige que quieres hacer"))) {
+          case 1: // Visualiar el primer contacto
             let primerContacto = contactos[0]
+
             console.log(
-              contacto1.nombre + " /",
-              contacto1.telefono + " /",
-              contacto1.correo
+              "Primer Contacto: ",
+              primerContacto.nombre + " /",
+              primerContacto.telefono + " /",
+              primerContacto.correo
             )
+
+            // insertamos en HTML el primer contacto
+            PARRAF.innerHTML =
+              "Primer Contacto: " +
+              primerContacto.nombre +
+              " / " +
+              primerContacto.telefono +
+              " / " +
+              primerContacto.correo
+            BODY.appendChild(PARRAF)
             break
 
-          case 2:
+          case 2: // Visualizar el ultimo contacto
             let ultimoContacto = contactos[contactos.length - 1]
+
             console.log(
-              contacto2.nombre + " /",
-              contacto2.telefono + " /",
-              contacto2.correo
+              ultimoContacto.nombre + " /",
+              ultimoContacto.telefono + " /",
+              ultimoContacto.correo
             )
+
+            // insertamos en HTML el ultimo contacto
+            PARRAF.innerHTML =
+              "Ultimo Contacto: " +
+              ultimoContacto.nombre +
+              " / " +
+              ultimoContacto.telefono +
+              " / " +
+              ultimoContacto.correo
+            BODY.appendChild(PARRAF)
             break
 
-          case 3:
-            let nombre = prompt("Escribe el nombre del nuevo contacto")
-            let telefono = prompt("Escribe el telefono del nuevo contacto")
-            let correo = prompt("Escribe el correo del nuevo contacto")
-            if (nombre == null) {
-              console.log()
-              break
-            } else if (telefono == null) {
-              console.log()
-              break
-            } else if (correo == null) {
-              console.log()
-              break
+          case 3: // Añadir un nuevo contacto
+            let nombreContactoNuevo = prompt(
+              "Escribe el nombre del nuevo contacto"
+            )
+
+            // Comprobamos si el nombre ha sido introducido
+            while (nombreContactoNuevo == null || nombreContactoNuevo === "") {
+              nombreContactoNuevo = prompt(
+                "No se ha introducido el nombre del nuevo contacto, prueba de nuevo"
+              )
+            }
+
+            let telefonoContactoNuevo = prompt(
+              "Escribe el telefono del nuevo contacto"
+            )
+            // Comprobamos si el telefono ha sido introducido
+            while (
+              telefonoContactoNuevo == null ||
+              telefonoContactoNuevo === ""
+            ) {
+              telefonoContactoNuevo = prompt(
+                "No se ha introducido el telefono del nuevo contacto, prueba de nuevo"
+              )
+            }
+
+            let correoContactoNuevo = prompt(
+              "Escribe el correo del nuevo contacto"
+            )
+            // Comprobamos si el correo ha sido introducido
+            while (correoContactoNuevo == null || correoContactoNuevo === "") {
+              correoContactoNuevo = prompt(
+                "No se ha introducido el correo del nuevo contacto, prueba de nuevo"
+              )
             }
 
             contactos.push({
-              nombre: nombre,
-              telefono: telefono,
-              correo: correo,
+              nombre: nombreContactoNuevo,
+              telefono: telefonoContactoNuevo,
+              correo: correoContactoNuevo,
             })
             break
 
           case 4:
-            console.log("Cerrando Programa")
+            alert("Cerrando Programa")
             break bucle
-          default:
-            console.log("Ha ocurrio algun error porfavor intentelo de nuevo")
+          default: // Si no se ha introducido un numero no valido o una cadena de texto, lanzamos mensaje de error
+            alert("Ha ocurrio algun error por favor intentelo de nuevo")
             break
         }
       }
