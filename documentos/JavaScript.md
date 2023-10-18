@@ -26,6 +26,9 @@
   - [Arrays (Vectores)](#arrays-vectores)
     - [Metodos](#metodos-1)
   - [Desestructuración](#desestructuración)
+  - [Sets(conjuntos)](#setsconjuntos)
+    - [Metodos Set](#metodos-set)
+  - [Maps](#maps)
 - [Errores](#errores)
 - [Objetos nativos](#objetos-nativos)
 - [Objetos del navegador](#objetos-del-navegador)
@@ -553,6 +556,55 @@ const pareja = [3, 4]
 const completo = [1, 2, ...pareja, 5]
 console.log(completo)
 ```
+
+## Sets(conjuntos)
+
+Es un objeto semejante a un Array que no permite valores duplicados
+
+**const miSet= new Set(xxxxxxxxxxx)** donde **xxxxxxxxxxx** es un iterable (array,map, string,set)
+
+```js
+let conjunto = new Set(2, 3, 4, 5, 6, 7, 3, 5)
+for (const elem of conjunto) {
+  console.log(elem)
+}
+```
+
+### Metodos Set
+
+- Add
+- Delete
+- Clear
+- Size
+- Has
+
+recordatorio: con ...spread se convierte a Array
+
+**const miArray=[...miConjunto]**
+
+
+```js
+// Conseguir un array sin duplicados
+let miArray = [1, 1, 1, 1, 3, 3, 4, 5, 5, 5, 3, 3, 4]
+let miSet2 = new Set(miArray)
+let miArrayFinal = [...miSet2]
+console.log(miArrayFinal)
+
+// Unir los tres arrays en uno sin valores repetidos
+let miArray1 = [1, 2, 3, 4, 5, 6, 7, 8]
+let miArray2 = [1, 2, 3, 8, 9, 0, 43, 45, 65]
+let miArray3 = [17, 32, 87, 45]
+
+let miArrayFinal = [...new Set([...miArray1, ...miArray2, ...miArray3])]
+// Comprobamos que realmente sea un array nuestro resultado
+console.log(miArrayFinal, miArrayFinal instanceof Array)
+```
+
+## Maps
+
+une las caracteristicas de los Arrays y los Conjuntos organiza los datos en forma de pares clave-valor con claves unicas
+
+**new Map()**
 
 # Errores
 
