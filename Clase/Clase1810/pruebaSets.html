@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sets probando</title>
+  </head>
+  <body>
+    <script>
+      // const miSet= new Set(xxxxxxxxxxxxxxxxxxx) donde xxxxxxxxxxx es un iterable (array,map, string,set)
+
+      // const miSet = new Set("Pamplinas")
+      // // Normalmente se recorre con un for..of
+      // console.log(miSet)
+
+      // let conjunto = new Set([2, 3, 4, 5, 6, 7, 3, 5])
+      // for (const elem of conjunto) {
+      //   console.log(elem)
+      // }
+
+      // Metodos:
+      // Add, delete, clear, size, has
+
+      // Conseguir un array sin duplicados
+      // let miArray = [1, 1, 1, 1, 3, 3, 4, 5, 5, 5, 3, 3, 4]
+      // let miSet2 = new Set(miArray)
+      // let miArrayFinal = [...miSet2]
+      // console.log(miArrayFinal)
+
+      // Unir los tres arrays en uno sin valores repetidos
+      let miArray1 = [1, 2, 3, 4, 5, 6, 7, 8]
+      let miArray2 = [1, 2, 3, 8, 9, 0, 43, 45, 65]
+      let miArray3 = [17, 32, 87, 45]
+
+      let miArrayFinal = [...new Set([...miArray1, ...miArray2, ...miArray3])]
+      // Comprobamos que realmente sea un array nuestro resultado
+      console.log(miArrayFinal, miArrayFinal instanceof Array)
+
+
+    </script>
+  </body>
+</html>
