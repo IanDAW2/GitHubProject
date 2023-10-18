@@ -2,16 +2,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio continuo nº4</title>
+    <title>Ejercicio continuo nº5</title>
   </head>
-  <!-- 4.- Modifica el programa para que el usuario pueda elegir lo que quiere hacer con la lista. Las opciones serán:
+  <!-- 5.- Encierra todo el programa en un bucle para que al usuario se le pregunte repetidamente qué quiere hacer.
+     El usuario puede optar por:
 
-        • Mostrar el primer contacto (primero)
-        • Mostrar el último contacto (último)
-        • Añadir un nuevo contacto (nuevo)
+    • Mostrar el primer contacto (primero)
+    • Mostrar el último contacto (último)
+    • Mostrar todos los contactos (todos)
+    • Añadir un nuevo contacto (nuevo)
+    • Salir del programa (salir)
 
-          Al agregar un nuevo contacto, verifica si el usuario ha ingresado todos los datos necesarios.
-          Si falta al menos uno de los tres valores (nombre, teléfono o correo electrónico), no se agrega el contacto. -->
+  Después de ejecutar la acción seleccionada, el programa le dará la oportunidad de elegir nuevamente.
+  El programa debe finalizar las acciones solo después de que el usuario dé un comando específico (salir). -->
   <body>
     <script>
       const BODY = document.body
@@ -43,7 +46,7 @@
 
       bucle: while (true) {
         var menu =
-          "1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Añadir un nuevo contacto\n4. Salir"
+          "1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir"
 
         switch (parseInt(prompt(menu, "Elige que quieres hacer"))) {
           case 1: // Visualiar el primer contacto
@@ -57,13 +60,14 @@
             )
 
             // insertamos en HTML el primer contacto
-            PARRAF.innerHTML =
+            PARRAF.innerHTML +=
               "Primer Contacto: " +
               primerContacto.nombre +
               " / " +
               primerContacto.telefono +
               " / " +
-              primerContacto.correo
+              primerContacto.correo +
+              "\n<br/>"
             BODY.appendChild(PARRAF)
             break
 
@@ -77,17 +81,30 @@
             )
 
             // insertamos en HTML el ultimo contacto
-            PARRAF.innerHTML =
+            PARRAF.innerHTML +=
               "Ultimo Contacto: " +
               ultimoContacto.nombre +
               " / " +
               ultimoContacto.telefono +
               " / " +
-              ultimoContacto.correo
+              ultimoContacto.correo +
+              "\n<br/>"
             BODY.appendChild(PARRAF)
             break
-
-          case 3: // Añadir un nuevo contacto
+          case 3: // Visualizar todos los contactos
+            for (const elemento of contactos) {
+              PARRAF.innerHTML +=
+                "Contacto: " +
+                elemento.nombre +
+                " / " +
+                elemento.telefono +
+                " / " +
+                elemento.correo +
+                "\n<br/>"
+            }
+            BODY.appendChild(PARRAF)
+            break
+          case 4: // Añadir un nuevo contacto
             let nombreContactoNuevo = prompt(
               "Escribe el nombre del nuevo contacto"
             )
@@ -129,7 +146,7 @@
             })
             break
 
-          case 4:
+          case 5:
             alert("Cerrando Programa")
             break bucle
           default: // Si no se ha introducido un numero no valido o una cadena de texto, lanzamos mensaje de error
