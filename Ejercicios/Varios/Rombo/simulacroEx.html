@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulacro de Examen</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      p{
+        font-size: 1.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Examen de Rombo</h1>
+    <div id="rombo"></div>
+    <script>
+      var rombo = document.getElementById("rombo") // cojo el elemento div
+      var filas = prompt("Que numero de filas tiene tu rombo?") // recibimos por teclado el numero de filas del rombo
+
+      var escritura = ""
+      for (let i = 0; i <= filas; i++) {
+        for (let j = 0; j <= filas - i; j++) { // Llega hasta el medio del rombo  
+          escritura += "&nbsp&nbsp" // escritura de los espacios
+        }
+        for (let k = 0; k < i * 2 - 1; k++) { // tiene que ser el numero de linea del rombo por 2
+          escritura += "*"
+        }
+        escritura += "<br/>"
+      }
+
+      for (let i = filas - 1; i > 0; i--) {
+        for (let j = 0; j <= filas - i; j++) { // Llega hasta el medio del rombo 
+          escritura += "&nbsp&nbsp"
+        }
+        for (let k = 0; k < i * 2 - 1; k++) { // tiene que ser el numero de linea del rombo por 2 
+          escritura += "*"
+        }
+        escritura += "<br/>"
+      }
+      rombo.innerHTML = "<p>" + escritura + "</p>" // escribimos el rombo en el html
+    </script>
+  </body>
+</html>
