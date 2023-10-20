@@ -31,6 +31,7 @@
   - [Maps](#maps)
 - [Errores](#errores)
 - [Objetos nativos](#objetos-nativos)
+  - [Objetos String](#objetos-string)
 - [Objetos del navegador](#objetos-del-navegador)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
 
@@ -582,7 +583,6 @@ recordatorio: con ...spread se convierte a Array
 
 **const miArray=[...miConjunto]**
 
-
 ```js
 // Conseguir un array sin duplicados
 let miArray = [1, 1, 1, 1, 3, 3, 4, 5, 5, 5, 3, 3, 4]
@@ -610,6 +610,39 @@ une las caracteristicas de los Arrays y los Conjuntos organiza los datos en form
 
 # Objetos nativos
 
+Los Objetos pueden ser nativos o de alto nivel (dependen del navegador)
+
+Posteriormente, los objetos definidos por el usuario.
+
+Los objetos Nativos no dependen del navegador.
+
+- Date
+- Math
+- RegExp
+- Array
+- Function
+- Object
+
+Los Objetos de Alto Nivel dependen del navegador.
+
+- Window
+- Screen
+
+**Difinicion**
+
+`var ciclista= (nombre:'Pedro', apellido:'Delgado', anio:'1998')`
+
+Es una coleccion de variables y funciones agrupadas
+
+## Objetos String
+
+Las cadenas pueden:
+
+- Instanciar
+- Concatenar
+- Medir
+
+  
 # Objetos del navegador
 
 # Objetos definidos por el usuario
