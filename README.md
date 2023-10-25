@@ -7,6 +7,7 @@
 - ## Teoria de JavaScript
 
   _**De la cual con JavaScript podras encontrar los apuntes realizados por mi en el siguiente enlace:**_
+
   [![Documentancion de JavaScript](documentos/image.png)](documentos/JavaScript.md)
 
 - ## [Ejercicios Varios](Ejercicios/Varios/)
@@ -16,5 +17,5 @@
   - ### [Patrones](Ejercicios/Varios/BuscaPatrones/)
   - ### [Arrays](Ejercicios/Varios/Arrays/)
 
-- ## Buscaminas
-  Enlace dirento a la carpeta donde se realizara a medida que avance el curso el Juego del Buscaminas desarrollado con HTML, CSS y JavaScript. [Buscaminas](Ejercicios/Buscaminas/)
+- ## [Buscaminas](Ejercicios/Buscaminas/)
+  Enlace dirento a la carpeta donde se realizara a medida que avance el curso el Juego del Buscaminas desarrollado con HTML, CSS y JavaScript. 
