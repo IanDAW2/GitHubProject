@@ -1,10 +1,34 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Busqueda de patrones dentro de una cadena</title>
+  </head>
+  <!-- 	Realiza una aplicación web que solicite una cadena de texto. El programa debe decir cuántas veces ocurre cada uno de estos patrones sin distinguir mayúsculas y minúsculas: “00” “101”, “ABC”, “H0”.Un carácter puede formar parte de más de un patrón encontrado. Por ejemplo:
+
+    En la cadena “000” el patrón “00” aparece dos veces (una empieza en la posición 0 y otra empieza en la posición 1).
+
+    Internamente el programa realizará la cuenta de patrones con una función definida como function numeroPatrones(texto) que devolverá un número entero con el número de patrones encontrados. 
+
+    Ejemplo: 1110101000ABCHO	 -->
+  <body>
+    <script>
+      var cadena = prompt("Escribe una cadena de texto")
+      const patrones = ["00", "101", "ABC", "HO"]
+
+      function numeroPatrones(texto, patrones) {
+        let numPatrones = 0
+        patrones.forEach((patron) => {
+          let temp = texto.toUpperCase()
+          while (temp.includes(patron)) {
+            temp = temp.substring(temp.indexOf(patron) + 1)
+            console.log(temp)
+            numPatrones++
+          }
+        })
+        return numPatrones
+      }
+      console.log(numeroPatrones(cadena, patrones))
+    </script>
+  </body>
 </html>
