@@ -628,7 +628,7 @@ Los Objetos de Alto Nivel dependen del navegador.
 - Window
 - Screen
 
-**Difinicion**
+**Definicion**
 
 `var ciclista= (nombre:'Pedro', apellido:'Delgado', anio:'1998')`
 
