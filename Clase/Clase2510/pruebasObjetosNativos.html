@@ -1,0 +1,67 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pruebas</title>
+  </head>
+  <body>
+    <script>
+      // Pruebas del metodo toString()
+      var miNumero = 27
+      alert(miNumero.toString(2)) // cambia el numero a binario 11011
+
+      // Infinito
+      var inf = 2
+      while (inf != Infinity) {
+        alert(inf)
+        inf *= inf
+      }
+
+      var div1 = 2,
+        div2 = 0
+      alert("Division 2/0=" + 2 / 0)
+      alert("Division -2/0=" + -2 / 0)
+      alert("Typeof: " + typeof (div1 / div2))
+
+      // NaN
+      let variable1 = 100 / "casa"
+      let variable2 = 100 / "10"
+      alert("La operacion 100/'casa' da comoresultado " + variable1)
+      alert("La operacion 100/10 da comoresultado " + variable2) // En este caso ya sabemos que si lo hace
+
+      var num = 123
+      var num2 = new Number(123)
+      var num3 = new Number(123)
+      alert("num es un " + typeof num) // Devuelve number
+      alert("num2 es un " + typeof num2) // Devuelve Object
+      // No utilizar objeto. Es lento en la ejecucion y el New puede dar errores
+
+      // Number.Propiedades
+      var maximo = Number.MAX_VALUE // valor maximo que almacena un numero
+      var minimo = Number.MIN_VALUE // valor minimo que puede almacenar una variable es
+      var neginf = Number.NEGATIVE_INFINITY
+      var posinf = Number.POSITIVE_INFINITY
+      var numnan = Number.NaN
+
+      // Metodos utiles
+      var numeroPrueba = 17.46
+      numeroPrueba.toFixed(1) // 17.5
+      numeroPrueba.toPrecision(3) // 17.5
+      numeroPrueba.toExponential() // 1.746e1
+      numeroPrueba.valueOf()
+      numeroPrueba.toString()
+      numeroPrueba.toLocaleString()
+
+      // Metodos Globales
+      Number() // Valor numerico de una variable
+      parseInt // Devuelve valor numerico
+      parseFloat
+      isNaN(valor) // Dice si valor es un numero
+      isFinite(valor) // Dice si valor es un numero finito o infinito
+
+      // Math
+      // Viene predefinido en JS y permite realizar operaciones matematicas
+      var aleatorio = Math.floor(Math.random() * 11) // Numero aleatorio entre 0 y 10
+    </script>
+  </body>
+</html>
