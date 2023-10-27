@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perimetro</title>
+  </head>
+  <body>
+    <h1>Saca el perimetro de un Rectangulo</h1>
+    <script>
+      /**
+       * * Escribe una función que reciba dos decimales con la base y altura de un rectángulo y devuelva su perímetro.
+       * * La función no debe leer nada de la entrada estándar ni mandar ningún dato por la salida estándar.
+       * * Nota: se devolverá un decimal (float). La función debe definirse con este estilo:
+       */
+      function perimetroRectangulo(base, altura) {
+        return (parseFloat(a + b) * 2).toFixed(2)
+      }
+
+      function perimetroRectangulo1(base, altura) {
+        while ((typeof base && typeof altura) !== typeof Float) {
+          base = parseFloat(prompt("Valor BASE"))
+          altura = parseFloat(prompt("Valor ALTURA"))
+        }
+        return ((altura + base) * 2).toFixed(2)
+      }
+
+      console.log(perimetroRectangulo1(1.1, "2"))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bisiesto</title>
+  </head>
+  <body>
+    <h1>Sacar si un año es Bisiesto</h1>
+    <script>
+      /**
+       * Un año es bisiesto si cumple los siguientes criterios:
+       * • Es divisible entre 4.
+       * • Si termina en 00, se comprueba si es divisible entre 400 (2000 y 2400 sí son bisiestos. 2100, 2200 y 2300 no lo son).
+       *
+       * * Escribe una función que reciba un año y devuelva 1 si es bisiesto, 0 en caso contrario.
+       * * La función no debe leer nada de la entrada estándar ni mandar ningún dato por la salida estándar.
+       * * La función debe definirse con este estilo:
+       * esBisiento()
+       */
+      function esBisiesto(anyo) {
+        return anyo % 4 === 0 && (anyo % 100 !== 0 || anyo % 400 === 0) ? 1 : 0
+      }
+
+      console.log(esBisiesto(parseInt(2020)))
+    </script>
+  </body>
+</html>
