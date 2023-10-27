@@ -8,38 +8,37 @@
 
 - ## Teoria de JavaScript
 
-  _**De la cual con JavaScript podras encontrar los apuntes realizados por mi en el siguiente enlace:**_
-
-  [![Documentancion de JavaScript](documentos/image.png)](documentos/JavaScript.md)
+  De la cual con JavaScript podras encontrar los apuntes realizados por mi en el siguiente icono:
+  [![Documentancion de JavaScript](documentos/icon.svg)](documentos/JavaScript.md)
 
 ---
 
 - ## Ejercicios Tarea Continua
-  - ### [Ejercicio-1](https://github.com/IanDAW2/GitHubProject/blob/eaefdac59ec2f85fc2aa4d45b278d8dc3bd9f05c/Ejercicios/TareaContinua/EjerContinuo.html)
-  - ### [Ejercicio-2](https://github.com/IanDAW2/GitHubProject/blob/afc1a99e16e25ef867a646e1a3103f1e2d02b082/Ejercicios/TareaContinua/EjerContinuo.html)
-  - ### [Ejercicio-3](https://github.com/IanDAW2/GitHubProject/blob/5a7ef04543ee8b5bd57a03447a68611073bc8be7/Ejercicios/TareaContinua/EjerContinuo.html)
-  - ### [Ejercicio-4](https://github.com/IanDAW2/GitHubProject/blob/2e227112f31bb5da43899d8c6feafb28df2095a3/Ejercicios/TareaContinua/EjerContinuo.html)
-  - ### [Ejercicio-5](https://github.com/IanDAW2/GitHubProject/blob/d058f0a3952333b4940d5825397b2e89c9f72943/Ejercicios/TareaContinua/EjerContinuo.html)
-  - ### [Ejercicio-6](https://github.com/IanDAW2/GitHubProject/blob/73410a184d8fe1727c87b9a3c505699be2739ef6/Ejercicios/TareaContinua/EjerContinuo.html)
-  - ### [Ejercicio-7]()
+  - ### [**_Ejercicio_1_**](https://github.com/IanDAW2/GitHubProject/blob/5fbf5d92a1530914ed3fec23654ca8f5187ec9b8/TareaContinua/EjerContinuo.html)
+  - ### [**_Ejercicio_2_**](https://github.com/IanDAW2/GitHubProject/blob/37402f91185171206a509945e4df1afee082755c/TareaContinua/EjerContinuo.html)
+  - ### [**_Ejercicio_3_**](https://github.com/IanDAW2/GitHubProject/blob/dabd44019cedcfc206aeadf94019878536e972ac/TareaContinua/EjerContinuo.html)
+  - ### [**_Ejercicio_4_**](https://github.com/IanDAW2/GitHubProject/blob/14bd2ae5925a96117b65f7b5b8a6c10da1ac42ce/TareaContinua/EjerContinuo.html)
+  - ### [**_Ejercicio_5_**](https://github.com/IanDAW2/GitHubProject/blob/0f9fc3e109c17356d7047d36f6fccab99c6c040e/TareaContinua/EjerContinuo.html)
+  - ### [**_Ejercicio_6_**](https://github.com/IanDAW2/GitHubProject/blob/48d35b2131edbf88c1b32cb8f8300e235e66afe7/TareaContinua/EjerContinuo.html) -> _En desarrollo_
+  - ### [**_Ejercicio_7_**]() -> _Sin empezar_
 
 ---
 
 - ## [Ejercicios Varios](Ejercicios/Varios/)
 
-  - ### [Rombo](Ejercicios/Varios/Rombo/)
-  - ### [Tren](Ejercicios/Varios/Tren/)
-  - ### [Patrones](Ejercicios/Varios/BuscaPatrones/)
-  - ### [Arrays](Ejercicios/Varios/Arrays/)
+  - ### [**_Rombo_**](Ejercicios/Varios/Rombo/)
+  - ### [**_Tren_**](Ejercicios/Varios/Tren/)
+  - ### [**_Patrones_**](Ejercicios/Varios/BuscaPatrones/)
+  - ### [**_Arrays_**](Ejercicios/Varios/Arrays/)
 
 ---
 
-- ## [Ejercicios Varios](Ejercicios/Number/)
+- ## [Ejercicios Number](Ejercicios/Number/)
 
-  - ### [Bisiesto](Ejercicios/Number/ejBisiesto.html)
-  - ### [Perimetro de un Rectangulo](Ejercicios/Number/perimetroRectangulo.html)
+  - ### [**_Bisiesto_**](Ejercicios/Number/ejBisiesto.html)
+  - ### [**_Perimetro de un Rectangulo_**](Ejercicios/Number/perimetroRectangulo.html)
 
 ---
 
-- ## [Buscaminas](Ejercicios/Buscaminas/)
+- ## [Proyecto de Clase - Buscaminas](Ejercicios/Buscaminas/)
   Enlace dirento a la carpeta donde se realizara a medida que avance el curso el Juego del Buscaminas desarrollado con HTML, CSS y JavaScript.
