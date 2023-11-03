@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Definicion de Objetos</title>
+  </head>
+  <body>
+    <script>
+      let persona1 = {
+        nombre: "Juan",
+        apellido: "Garcia",
+        ano: 1815,
+      }
+
+      let persona2 = new Object()
+      persona2.nombre = "Pedro"
+      persona2.apellido = "Perez"
+      persona2.ano = 1891
+
+      function Persona(nom, ape, an) {
+        this.nombre = nom
+        this.apellido = ape
+        this.ano = an
+      }
+
+      let persona1Cons = new Persona(
+        persona1.nombre,
+        persona1.apellido,
+        persona1.ano
+      )
+
+      let persona2Cons = new Persona(
+        persona2.nombre,
+        persona2.apellido,
+        persona2.ano
+      )
+
+      for (const key in persona1Cons) {
+        console.log(key + " : " + persona1Cons[key])
+      }
+
+      persona1.nacionalidad = "Inglesa"
+
+      delete persona1.ano
+
+      for (const key in persona1) {
+        console.log(key + " : " + persona1[key])
+      }
+
+      persona1.nombreCompleto = function () {
+        return this.nombre + " " + this.apellido
+      }
+      console.log(persona1.nombreCompleto())  
+    </script>
+  </body>
+</html>

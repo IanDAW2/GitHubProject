@@ -30,9 +30,14 @@
     - [Metodos Set](#metodos-set)
   - [Maps](#maps)
 - [Errores](#errores)
+  - [Metodos](#metodos-2)
+  - [Manejo](#manejo)
 - [Objetos nativos](#objetos-nativos)
   - [Objetos String](#objetos-string)
   - [Objetos Number](#objetos-number)
+  - [Constructores](#constructores)
+    - [Crear metodos](#crear-metodos)
+  - [Clases](#clases)
 - [Objetos del navegador](#objetos-del-navegador)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
 
@@ -609,6 +614,37 @@ une las caracteristicas de los Arrays y los Conjuntos organiza los datos en form
 
 # Errores
 
+Cuando se produce un error, JavaScript genera un objeto que contiene los detalles al respecto.
+
+## Metodos
+
+- RangeError -> valor fuera de limites
+- ReferenceError -> referencia a objeto no valida
+- SyntaxError -> Error de sintaxis
+- TypeError -> Error de tipo
+- URIError -> Función de manejo de URI global se usó de manera incorrecta.
+
+## Manejo
+
+Para manejar errores sin que rompan el programa podemos utilizar `try-catch()`.
+
+Cuando salta un error y lo que queremos visualizar podemos utilizar lo siguiente:
+
+```js
+try {
+  console.log("Inicio de sentencias de try")
+  hola_caracola
+  console.log("Fin de sentencias de try (Si/ )")
+} catch (err) {
+  console.log(`¡Un error ha ocurrido!`)
+  console.log(err.name) // ReferenceError
+  console.log(err.message) // hola_caracola is not defined
+  console.log(err.stack) // tree de todo el error con mas detalles
+}
+```
+
+---
+
 # Objetos nativos
 
 Los Objetos pueden ser nativos o de alto nivel (dependen del navegador)
@@ -631,7 +667,14 @@ Los Objetos de Alto Nivel dependen del navegador.
 
 **Definicion**
 
-`var ciclista= (nombre:'Pedro', apellido:'Delgado', anio:'1998')`
+```js
+var ciclista = { nombre: "Pedro", apellido: "Delgado", anio: 1998 }
+
+var ciclista = new Object()
+ciclista.nombre = "Pedro"
+ciclista.apellido = "Delgado"
+ciclista.edad = 35
+```
 
 Es una coleccion de variables y funciones agrupadas
 
@@ -703,6 +746,35 @@ Las cadenas pueden:
   // Viene predefinido en JS y permite realizar operaciones matematicas
   var aleatorio = Math.floor(Math.random()*11) // Numero aleatorio entre 0 y 10
 ```
+
+## Constructores
+
+```js
+function Persona(nom, ape, ed) = {
+  this.nombre = nom
+  this.apellido = ape
+  this.edad = ed
+}
+
+var persona1 = new Persona('Pedro', 'Delgado', 35)
+```
+
+La forma de recorrer un Objeto es con un bucle `for..in`
+
+### Crear metodos
+
+```js
+const user = {
+  name: "Manz",
+  talk: function () {
+    return "Hola"
+  },
+}
+```
+
+## Clases
+
+_proximamente..._
 
 # Objetos del navegador
 
