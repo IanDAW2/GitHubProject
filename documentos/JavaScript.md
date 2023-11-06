@@ -37,6 +37,7 @@
   - [Objetos Number](#objetos-number)
   - [Constructores](#constructores)
     - [Crear metodos](#crear-metodos)
+- [JSON](#json)
   - [Clases](#clases)
 - [Objetos del navegador](#objetos-del-navegador)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
@@ -771,6 +772,19 @@ const user = {
   },
 }
 ```
+
+# JSON
+
+Son las siglas de JavaScript Object Notation
+
+diferencias entre JSON y un Objeto:
+
+- Propiedades del objeto deben estar entre comillas con comillas dobles
+- Los textos String deben ser entrecomillados
+- Solo puede almacenar tipos como String, Number, Object, Array, Boolean o null
+- Tipos como Function, regex, date u otros tipos no son posibles de almacenar. 
+
+En JS existenn una serie de metodos que facilian la tarea de pasar de un Objeto de JS a JSON viceversa(parsear),...
 
 ## Clases
 
