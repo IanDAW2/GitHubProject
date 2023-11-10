@@ -137,7 +137,6 @@ function prodPrecioTotal(lista) {
     (acumulador, valor) => acumulador + valor.importe()
   )
   return precioTotal.toFixed(2)
-} // ! undefined, arreglar
 
 function prodConMenosUnidades(lista, cantidad) {
   const menosUnidades = []
