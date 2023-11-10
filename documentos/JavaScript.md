@@ -37,8 +37,10 @@
   - [Objetos Number](#objetos-number)
   - [Constructores](#constructores)
     - [Crear metodos](#crear-metodos)
-- [JSON](#json)
+  - [JSON](#json)
   - [Clases](#clases)
+  - [Desestructuración de Objetos](#desestructuración-de-objetos)
+    - [Metodos](#metodos-3)
 - [Objetos del navegador](#objetos-del-navegador)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
 
@@ -586,7 +588,7 @@ for (const elem of conjunto) {
 - Size
 - Has
 
-recordatorio: con ...spread se convierte a Array
+_recordatorio: con ...spread se convierte a Array_
 
 **const miArray=[...miConjunto]**
 
@@ -773,7 +775,7 @@ const user = {
 }
 ```
 
-# JSON
+## JSON
 
 Son las siglas de JavaScript Object Notation
 
@@ -782,13 +784,129 @@ diferencias entre JSON y un Objeto:
 - Propiedades del objeto deben estar entre comillas con comillas dobles
 - Los textos String deben ser entrecomillados
 - Solo puede almacenar tipos como String, Number, Object, Array, Boolean o null
-- Tipos como Function, regex, date u otros tipos no son posibles de almacenar. 
+- Tipos como Function, regex, date u otros tipos no son posibles de almacenar.
 
 En JS existenn una serie de metodos que facilian la tarea de pasar de un Objeto de JS a JSON viceversa(parsear),...
 
 ## Clases
 
 _proximamente..._
+
+## Desestructuración de Objetos
+
+Utilizando la desestrucuturacion de objetos se puede separar en variables las propiedades que tenga un objeto:
+
+```js
+const user = {
+  name: "Otto",
+  role: "arquero",
+  life: 99,
+}
+// Como se desestructura...
+
+const { name, role, life } = user
+
+console.log(name)
+console.log(role, life)
+
+// O tambien
+console.log({ name, role, life })
+// Que en realidad es volver a estructurar para mostrar
+```
+
+La desestructuracion solo funciona para estructuras de datos.
+Con un objeto que contenga metodos o elementos de DOM
+
+```js
+const user = {
+  name: "Otto",
+  role: "arquero",
+  life: 99,
+}
+
+const fullUser = {
+  ...user,
+  power: 25,
+  life: 50,
+}
+/**
+ * En este ejemplo, se crea un nuevo objeto fullUser con las mismas propiedades de user,
+ * añadiendole la nueva propiedad power y sobreescibiendo la propiedad life con valor 50
+ */
+```
+
+Trabajando con valores primitivos en JS se pasan por valor
+Pero, para valores mas complejos se utiliza el paso por referencia
+
+```js
+const user = {
+  name: "Otto",
+  role: "arquero",
+  life: 99,
+  features: ["learn", "code", "paint"],
+}
+
+const fullUser = {
+  ...user,
+  power: 25,
+  life: 50,
+}
+
+// Vamos a ver que es lo que obtiene
+console.log(user.features) // ["learn", "code", "paint"]
+console.log(fullUser.features) // ["learn", "code", "paint"]
+
+fullUser.features[0] = "program"
+
+console.log(user.features) // ["program", "code", "paint"]
+console.log(fullUser.features) // ["program", "code", "paint"]
+
+/**
+ * En este ejemplo, le añadimos una lista llamada features a user y luego hacemos la herencia en fullUser,
+ * Si intentamos cambiar el valor de algun elemento en la lista de  fullUser, lo que pasara es que
+ * tambien cambiara en user, esto es debido a que ese valor (lista/objeto) se pasa por referencia
+ */
+```
+
+Para salvar esta cirscuntancia se puede utilizar la funcion strucutedClone() a la que se le pasa
+el objeto a copiar. Esta funcion hara, ahora si, una copia, devolviendo un nuevo objeto, y no la referencia.
+
+```js
+const user = {
+  name: "Otto",
+  role: "arquero",
+  life: 99,
+  features: ["learn", "code", "paint"],
+}
+
+const fullUser = {
+  ...structuredClone(user),
+  power: 25,
+  life: 50,
+}
+
+// Vamos a ver que es lo que obtiene
+console.log(user.features) // ["learn", "code", "paint"]
+console.log(fullUser.features) // ["learn", "code", "paint"]
+
+fullUser.features[0] = "program"
+
+console.log(user.features) // ["learn", "code", "paint"]
+console.log(fullUser.features) // ["program", "code", "paint"]
+
+/**
+ * En este ejemplo, conseguimos que la lista añadida no se pase por referencia y podamos tratarla de forma
+ * independiente al otro objeto
+ */
+```
+
+### Metodos
+
+```js
+Object.keys(obj) // Devuelve Array de los indices del iterable(en una cadena --- numero de letras)
+Object.values(obj) // Devuelve Array de los contenidos del iterable
+Object.entries(obj) // Devuelve Array de los pares claves:valor
+```
 
 # Objetos del navegador
 
