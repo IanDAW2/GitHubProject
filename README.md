@@ -40,5 +40,11 @@
 
 ---
 
+- ## [Objetos Prototipo](Ejercicios/ObjetosPrototipo/)
+
+  - ### [**_Ejercicios_**](Ejercicios/ObjetosPrototipo/objeto.js) 
+
+---
+
 - ## [Proyecto de Clase - Buscaminas](Ejercicios/Buscaminas/)
   Enlace dirento a la carpeta donde se realizara a medida que avance el curso el Juego del Buscaminas desarrollado con HTML, CSS y JavaScript.
