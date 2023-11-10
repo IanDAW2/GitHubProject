@@ -27,7 +27,7 @@ function Productos(nom, cat, ud, pre) {
   this.precio = pre
 
   this.importe = () => {
-    return (this.unidades * this.precio)//.toFixed(2)
+    return this.unidades * this.precio //.toFixed(2)
   }
 
   this.getInfo = () => {
@@ -137,6 +137,7 @@ function prodPrecioTotal(lista) {
     (acumulador, valor) => acumulador + valor.importe()
   )
   return precioTotal.toFixed(2)
+}
 
 function prodConMenosUnidades(lista, cantidad) {
   const menosUnidades = []
