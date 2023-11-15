@@ -49,8 +49,8 @@ const producto1 = new Productos("tvSamsung", "Televisores", 10, 399.99)
 const producto2 = new Productos("Secret Lab Titan", "Silla Gaming", 3, 629)
 const producto3 = new Productos("Logitech G305", "Ratones", 50, 72.99)
 
-console.log(producto1.getInfo())
-console.log(producto2.getInfo())
+// console.log(producto1.getInfo())
+// console.log(producto2.getInfo())
 
 /**
  * * Crea un Objeto Televisores que hereda de Productos y que tiene una nueva propiedad llamada tamaño.
@@ -72,7 +72,7 @@ function Televisores(nom, cat, ud, pre, tam) {
     `Nombre: ${this.nombre} ${this.tamano}\"(${this.categoria})
           Unidades: ${this.unidades}
           Precio: ${this.precio}
-          Importe: ${this.importe()} (${this.typeOf()})`
+          Importe: ${this.importe()} ` /*(${this.typeOf()})*/
 
   this.valueOf = () => this.tamano
 }
@@ -84,18 +84,18 @@ const television = new Televisores("LG", "Television", 12, 149.98, 48)
  * * Esta función debe devolver una cadena de texto (La que consideres oportuna).
  */
 
-console.log(producto3.toString())
+// console.log(producto3.toString())
 
-console.log(television.toString())
+// console.log(television.toString())
 
 /**
  * * Modifica los Objetos Productos y Televisores, para que contenga la función ”valueOf”.
  * * Esta función debe devolver un valor numérico(El que consideres oportuno).
  */
 
-console.log("valueOf Importe:" + producto3.valueOf())
+// console.log("valueOf Importe:" + producto3.valueOf())
 
-console.log("valueOf Tamaño:" + television.valueOf())
+// console.log("valueOf Tamaño:" + television.valueOf())
 
 /**
  * * Crea 5 productos y guárdalos en un array.
