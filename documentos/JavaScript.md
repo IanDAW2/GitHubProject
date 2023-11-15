@@ -38,9 +38,10 @@
   - [Constructores](#constructores)
     - [Crear metodos](#crear-metodos)
   - [JSON](#json)
+    - [Metodos](#metodos-3)
   - [Clases](#clases)
   - [Desestructuración de Objetos](#desestructuración-de-objetos)
-    - [Metodos](#metodos-3)
+    - [Metodos](#metodos-4)
 - [Objetos del navegador](#objetos-del-navegador)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
 
@@ -764,6 +765,8 @@ var persona1 = new Persona('Pedro', 'Delgado', 35)
 
 La forma de recorrer un Objeto es con un bucle `for..in`
 
+Podemos simular la herencia con Prototype Ejemplos en : [Ejercicio de Prototype](../Clase/Noviembre/Clase0811/objetos.js)
+
 ### Crear metodos
 
 ```js
@@ -786,8 +789,18 @@ diferencias entre JSON y un Objeto:
 - Solo puede almacenar tipos como String, Number, Object, Array, Boolean o null
 - Tipos como Function, regex, date u otros tipos no son posibles de almacenar.
 
-En JS existenn una serie de metodos que facilian la tarea de pasar de un Objeto de JS a JSON viceversa(parsear),...
+En JS existen una serie de metodos que facilian la tarea de pasar de un Objeto de JS a JSON viceversa(parsear),pudiendo trabajar con contenido de tipo String(que contenga un JSON) y objetos JS segun interese.
 
+### Metodos
+
+Dichos metodos son los siguientes:
+
+```js
+JSON.parse(str) // Convierte en texto `str`(si es un JSON valido) a un objeto y lo devuelve.
+JSON.stringify(obj) // Convierte un objeto JavaScript `obj` a su representacion JSON y la devuelve.
+JSON.stringify(obj, props) // Idem al anterior, pero filtra y mantiene solo las propiedades del array `props`
+JSON.stringify(obj, props, spaces) // Idem al anterior, pero identa el JSON a number `spaces` espacios
+```
 ## Clases
 
 _proximamente..._
@@ -907,7 +920,6 @@ Object.keys(obj) // Devuelve Array de los indices del iterable(en una cadena ---
 Object.values(obj) // Devuelve Array de los contenidos del iterable
 Object.entries(obj) // Devuelve Array de los pares claves:valor
 ```
-
 # Objetos del navegador
 
 # Objetos definidos por el usuario
