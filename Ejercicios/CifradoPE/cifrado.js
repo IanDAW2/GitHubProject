@@ -14,20 +14,20 @@ const vocales = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
 function cifradoPe(palabra) {
   arrayPalabra = [...palabra]
-  let resultado = ""
+  let resultado = "pe"
   console.log(arrayPalabra)
   arrayPalabra.forEach((letra, i) => {
     if (
-      vocales.includes(letra) &&
-      arrayPalabra[i + 1] &&
-      !vocales.includes(arrayPalabra[i + 1])
+      vocales.includes(letra) && // Si icluye alguna vocal
+      arrayPalabra[i + 1] && // Si existe algo despues de esa letra
+      !vocales.includes(arrayPalabra[i + 1]) // Si no incluye otra vocal despues
     ) {
-      resultado += letra + "pe"
+      resultado += letra + "pe" // Si todo se cumple añadimos la letra mas pe
     } else {
-      resultado += letra
+      resultado += letra // Si alguna de las codiciones no se cumple solo añadimos la letra
     }
   })
-  return "pe" + resultado
+  return resultado 
 }
 
 console.log(cifradoPe("Autenticacion"))
