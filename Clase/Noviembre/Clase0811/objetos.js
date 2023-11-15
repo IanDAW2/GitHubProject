@@ -16,15 +16,14 @@ const paco = new Persona("Paco", "Martinez", 27)
 
 ana.nacionalidad = "Inglesa"
 
+// Con prototype podemos añadir nuevas parametros o funciones a un constructor o un objeto en concreto
 Persona.prototype.fecha = new Date().toLocaleString()
 
 console.log(ana.nombreCompleto())
 console.log(ana.nacionalidad)
 console.log(paco.fecha)
 
-Persona.prototype.boda = '2003'
-// Persona.prototype.
-
+Persona.prototype.boda = '2003' 
 
 // Forma actualizada, por clases
 class persona{
