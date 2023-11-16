@@ -203,6 +203,7 @@
       }
 
       function showAllContacts(lista) {
+        // Funcion para todos los contactos
         if (lista instanceof Array) {
           lista.forEach((contacto, indice) => {
             console.log(
@@ -226,6 +227,7 @@
       }
 
       function addNewContact(lista, nombre, telefono, correo) {
+        // Funcion para añadir un nuevo contacto pasandoles los parametros 
         if (lista instanceof Array) {
           while (correo == null || correo === "") {
             correo = prompt(
