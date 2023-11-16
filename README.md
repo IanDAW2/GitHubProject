@@ -19,8 +19,8 @@
   - ### [**_Ejercicio_3_**](https://github.com/IanDAW2/GitHubProject/blob/dabd44019cedcfc206aeadf94019878536e972ac/TareaContinua/EjerContinuo.html)
   - ### [**_Ejercicio_4_**](https://github.com/IanDAW2/GitHubProject/blob/14bd2ae5925a96117b65f7b5b8a6c10da1ac42ce/TareaContinua/EjerContinuo.html)
   - ### [**_Ejercicio_5_**](https://github.com/IanDAW2/GitHubProject/blob/0f9fc3e109c17356d7047d36f6fccab99c6c040e/TareaContinua/EjerContinuo.html)
-  - ### [**_Ejercicio_6_**](https://github.com/IanDAW2/GitHubProject/blob/48d35b2131edbf88c1b32cb8f8300e235e66afe7/TareaContinua/EjerContinuo.html) -> _En desarrollo_
-  - ### [**_Ejercicio_7_**]() -> _Sin empezar_
+  - ### [**_Ejercicio_6_**](https://github.com/IanDAW2/GitHubProject/blob/48d35b2131edbf88c1b32cb8f8300e235e66afe7/TareaContinua/EjerContinuo.html)
+  - ### [**_Ejercicio_7_**](https://github.com/IanDAW2/GitHubProject/blob/7ae8e9c3cfd280fb580f5f8cb03b4b915e6280a9/TareaContinua/EjerContinuo.html)
 
 ---
 
