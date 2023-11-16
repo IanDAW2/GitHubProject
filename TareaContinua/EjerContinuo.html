@@ -1,20 +1,12 @@
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio continuo nº6</title>
+    <title>Ejercicio continuo nº7</title>
   </head>
-  <!-- 6.- Trata de organizar el código de tu programa (¿quitando switch?) usando funciones. Define y llama a tres funciones en los lugares apropiados:
-
-    • showContact: la función debe tomar dos argumentos;
-     el primero es la lista de contactos y el segundo es el número de índice del contacto a mostrar;
-     dentro de la función, verifica si se pasan los argumentos correctos, es decir,
-      si los contactos son un array (utiliza la construcción instanceofArray para esto).
-    • showAllContacts: la función debe tomar un argumento, la lista de contactos;
-      dentro de la función, verifica si el argumento dado es un array.
-    • addNewContact: la función debe tomar cuatro argumentos, una lista de contactos y los datos del nuevo contacto,
-     es decir: nombre, teléfono y número; 
-     antes de agregar un nuevo contacto, verifica si el argumento pasado es un array y si los datos del nuevo contacto tienen algún valor. -->
+  <!-- 7.- Da al usuario la opción de seleccionar una acción sort de la lista. 
+    Cuando se selecciona esta opción, el usuario debería poder especificar si desea ordenar 
+    los contactos por nombre, teléfono o correo electrónico. -->
   <body>
     <script>
       const BODY = document.body
@@ -51,6 +43,7 @@
       4. Mostrar un contacto
       5. Mostrar todos los contactos
       6. Añadir un nuevo contacto v2
+      7. Ordenar por un elemento
       `
 
       var opcion = parseInt(prompt(menu, "Elige que quieres hacer"))
@@ -77,6 +70,10 @@
         let telefono = prompt("Introduce el telefono")
         let correo = prompt("Introduce el correo")
         addNewContact(contactos, nombre, telefono, correo)
+      } else if (opcion === 7) {
+        // Mostrar todos los contactos
+        let elemento = prompt("Introduce el elemento por que quieres ordenar")
+        ordenarContactos(elemento)
       } else {
         // Si no se ha introducido un numero no valido o una cadena de texto, lanzamos mensaje de error
         alert("Ha ocurrio algun error por favor intentelo de nuevo")
@@ -226,6 +223,7 @@
       }
 
       function addNewContact(lista, nombre, telefono, correo) {
+        // Funcion para añadir un nuevo contacto pasandole los parametros del contacto
         if (lista instanceof Array) {
           while (correo == null || correo === "") {
             correo = prompt(
@@ -260,6 +258,39 @@
             "\n<br/> Creado Correctamente"
           BODY.appendChild(PARRAF)
         }
+      }
+
+      function ordenarContactos(element) {
+        // Funcion para ordenar lista por el parametro que nos dé el usuario
+        while (!["nombre", "telefono", "correo"].includes(element)) {
+          element = prompt(
+            "No es un elemento por el que se pueda ordenar, prueba de nuevo"
+          )
+        }
+
+        let lista = contactos.sort((a, b) =>
+          a[element].localeCompare(b[element])
+        )
+
+        lista.forEach((contacto, indice) => {
+          console.log(
+            "Contacto Nº" + (indice + 1) + ": ",
+            contacto.nombre + " /",
+            contacto.telefono + " /",
+            contacto.correo
+          )
+
+          // insertamos en HTML los contactos
+          PARRAF.innerHTML +=
+            "Contacto: " +
+            contacto.nombre +
+            " / " +
+            contacto.telefono +
+            " / " +
+            contacto.correo +
+            "\n<br/>"
+        })
+        BODY.appendChild(PARRAF)
       }
     </script>
   </body>
