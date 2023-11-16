@@ -66,13 +66,17 @@
         firstContact()
       } else if (opcion === 4) {
         // Mostrar un contacto
-        showContact(contactos, 1)
+        let indice = prompt("Introduce un indice")
+        showContact(contactos, indice)
       } else if (opcion === 5) {
         // Mostrar todos los contactos
-        showAllContacts()
+        showAllContacts(contactos)
       } else if (opcion === 6) {
         // Añadir un nuevo contacto v2
-        addNewContact()
+        let nombre = prompt("Introduce el nombre")
+        let telefono = prompt("Introduce el telefono")
+        let correo = prompt("Introduce el correo")
+        addNewContact(contactos, nombre, telefono, correo)
       } else {
         // Si no se ha introducido un numero no valido o una cadena de texto, lanzamos mensaje de error
         alert("Ha ocurrio algun error por favor intentelo de nuevo")
@@ -171,24 +175,28 @@
       function showContact(lista, indice) {
         // Funcion para visualizar solamente el contacto especificado en el parametro 'indice'
         if (lista instanceof Array) {
-          let contacto = lista[i]
+          if (indice <= lista.length - 1 && indice >= 0) {
+            let contacto = lista[indice]
+            console.log(contacto)
+            console.log(
+              "Contacto: ",
+              contacto.nombre + " /",
+              contacto.telefono + " /",
+              contacto.correo
+            )
 
-          console.log(
-            "Contacto: ",
-            contacto.nombre + " /",
-            contacto.telefono + " /",
-            contacto.correo
-          )
-
-          // insertamos en HTML el contacto
-          PARRAF.innerHTML =
-            "Contacto: " +
-            contacto.nombre +
-            " / " +
-            contacto.telefono +
-            " / " +
-            contacto.correo
-          BODY.appendChild(PARRAF)
+            // insertamos en HTML el contacto
+            PARRAF.innerHTML =
+              "Contacto: " +
+              contacto.nombre +
+              " / " +
+              contacto.telefono +
+              " / " +
+              contacto.correo
+            BODY.appendChild(PARRAF)
+          } else {
+            alert("Ha ocurrido un error vuelve a intentarlo mas tarde.")
+          }
         } else {
           alert("Ha ocurrido un error vuelve a intentarlo mas tarde.")
         }
@@ -203,20 +211,56 @@
               contacto.telefono + " /",
               contacto.correo
             )
-            // insertamos en HTML los contacto
+            // insertamos en HTML los contactos
             PARRAF.innerHTML +=
               "Contacto: " +
               contacto.nombre +
               " / " +
               contacto.telefono +
               " / " +
-              contacto.correo
-            BODY.appendChild(PARRAF)
+              contacto.correo +
+              "\n<br/>"
           })
+          BODY.appendChild(PARRAF)
         }
       }
 
-      function addNewContact(lista, nombre, telefono, correo) {}
+      function addNewContact(lista, nombre, telefono, correo) {
+        if (lista instanceof Array) {
+          while (correo == null || correo === "") {
+            correo = prompt(
+              "No se ha introducido el correo del nuevo contacto, prueba de nuevo"
+            )
+          }
+          while (nombre == null || nombre === "") {
+            nombre = prompt(
+              "No se ha introducido el nombre del nuevo contacto, prueba de nuevo"
+            )
+          }
+          // Comprobamos si el telefono ha sido introducido
+          while (telefono == null || telefono === "") {
+            telefono = prompt(
+              "No se ha introducido el telefono del nuevo contacto, prueba de nuevo"
+            )
+          }
+          lista.push({
+            nombre: nombre,
+            telefono: telefono,
+            correo: correo,
+          })
+
+          // insertamos en HTML el ultimo contacto
+          PARRAF.innerHTML =
+            "Nuevo Contacto: " +
+            nombre +
+            " / " +
+            telefono +
+            " / " +
+            correo +
+            "\n<br/> Creado Correctamente"
+          BODY.appendChild(PARRAF)
+        }
+      }
     </script>
   </body>
 </html>
