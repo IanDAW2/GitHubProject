@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cual es el mayor?</title>
+  </head>
+  <!-- 1.  Programa que pida dos números y nos diga cuál es el mayor,
+   el menor o si son iguales. Si no son números o son menores que cero,
+   que lo vuelva a pedir -->
+  <body>
+    <script>
+      var numero1 = prompt("Dame el primer numero")
+
+      while (true) {
+        if (numero1 >= 0 || !isNaN(numero1)) break
+
+        numero1 = prompt("Primer numero no valido, prueba de nuevo")
+      }
+
+      var numero2 = prompt("Dame el segundo numero")
+      while (true) {
+        if (numero2 >= 0 || !isNaN(numero2)) break
+
+        numero2 = prompt("Segundo numero no valido, prueba de nuevo")
+      }
+
+      if (numero1 > numero2) {
+        alert(`El mayor es ${numero1} y el menor es ${numero2}`)
+      } else if (numero1 < numero2) {
+        alert(`El mayor es ${numero2} y el menor es ${numero1}`)
+      } else {
+        alert(`${numero1} es igual a ${numero2}`)
+      }
+    </script>
+  </body>
+</html>

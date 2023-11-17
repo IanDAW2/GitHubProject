@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numeros multiplos o no</title>
+  </head>
+  <!-- 10. Pedir dos números y decir si non múltiplos o no -->
+  <body>
+    <script>
+      function pedirNumero() {
+        var numero = prompt("Dame un numero")
+        while (true) {
+          if (numero >= 0 || !isNaN(numero)) break
+
+          numero = prompt("No valido, prueba de nuevo, debe ser un numero")
+        }
+        return parseInt(numero)
+      }
+
+      var numero1 = pedirNumero()
+      var numero2 = pedirNumero()
+
+      numero1 % numero2 == 0
+        ? console.log(`${numero1} y ${numero2} SI son multiplos`)
+        : console.log(`${numero1} y ${numero2} NO son multiplos`)
+    </script>
+  </body>
+</html>
