@@ -1,0 +1,42 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 2 Piramide Invertida</title>
+	</head>
+	<body>
+		<script>
+			const BODY = document.body;
+			const PARRAF = document.createElement("p");
+
+			function pedirNumero(mensaje) {
+				let numero = prompt(mensaje);
+				while (true) {
+					if ((numero >= 0 && numero <= 50) || !isNaN(numero)) break;
+
+					numero = prompt(
+						"No valido, prueba de nuevo, debe ser un numero par entre 6 y 16 par"
+					);
+				}
+				return parseInt(numero);
+			}
+
+			var lineas = pedirNumero("De cuantas lineas quieres la piramide?");
+			var piramide = "";
+			for (let numFila = lineas ; numFila > 0; numFila--) {
+				for (let espacios = 0; espacios <= lineas - numFila; espacios++) {
+					// Llega hasta el medio del rombo
+					piramide += numFila>=10 ? "&nbsp&nbsp":"&nbsp&nbsp&nbsp";
+				}
+				for (let k = 0; k < numFila * 2 - 1; k++) {
+					// tiene que ser el numero de linea del rombo por 2
+					piramide += numFila;
+				}
+				piramide += "<br/>";
+			}
+
+			PARRAF.innerHTML = piramide;
+			BODY.appendChild(PARRAF);
+		</script>
+	</body>
+</html>

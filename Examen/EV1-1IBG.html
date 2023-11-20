@@ -1,0 +1,77 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Paseo "Suma Cero"</title>
+	</head>
+	<body>
+		<script>
+			const DIRECCIONES = ["n", "e", "s", "o"]; // Lista de direcciones
+			const BODY = document.body;
+			const PARRAF = document.createElement("p");
+
+			function pedirNumero(mensaje) {
+				let numero = prompt(mensaje);
+				while (true) {
+					if (
+						(numero <= 6 && numero >= 16) || // numero comprendido entre 6 y 16
+						!isNaN(numero) || // Que sea un numero, no es valido una cadena
+						numero % 2 == 0 // Que el numero sea un numero PAR
+					)
+						break;
+
+					numero = prompt(
+						"No valido, prueba de nuevo, debe ser un numero par entre 6 y 16 par"
+					);
+				}
+				return parseInt(numero);
+			}
+
+			var minutos = pedirNumero("Cuantos minutos tienes?");
+
+			// Segunda Opcion MEJOR
+			function paseo(minutos) {
+				var indicaciones = []; // array principal con el camino completo
+				var trayecto = []; // array de apoyo para realizar el camino de vuelta
+				for (let index = 0; index < minutos; index++) {
+					if (minutos / 2 <= index) {
+						indicaciones.push(trayecto.pop()); // Metemos el trayecto que hemos ido haciendo pero al reves
+					} else {
+						let random = (Math.random() * 10 - 7).toFixed();
+						random = random < 1 ? 0 : random;
+						indicaciones.push(DIRECCIONES[random]); // Direccion aleatoria
+						trayecto.push(DIRECCIONES[random < 2 ? random + 2 : random - 2]); // Direccion contraria a la que haya ido
+					}
+				}
+				return indicaciones;
+			}
+
+			var resultadoPaseo = "";
+			paseo(minutos).forEach((valor, indice, lista) => {
+				resultadoPaseo +=
+					indice != 0
+						? indice == lista.length - 1
+							? "Finalmente dirigete "
+							: "Ahora dirigete "
+						: "Comienza dirigiendote ";
+				switch (valor) {
+					case "n":
+						resultadoPaseo += "hacia el norte.\n<br/>";
+						break;
+					case "s":
+						resultadoPaseo += "hacia el sur. \n<br/>";
+						break;
+					case "e":
+						resultadoPaseo += "hacia el este. \n<br/>";
+						break;
+					case "o":
+						resultadoPaseo += "hacia el oeste. \n<br/>";
+						break;
+				}
+			});
+
+			PARRAF.innerHTML = resultadoPaseo;
+			BODY.appendChild(PARRAF);
+		</script>
+	</body>
+</html>
