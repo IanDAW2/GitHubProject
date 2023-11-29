@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <script>
+      function crearVentana() {
+        mensaje = 'Bienvenido'
+        miVentana = window.open('', '', `height=${mensaje.length},width=${mensaje.length}`)
+        miVentana.document.write(mensaje)
+      }
+      setTimeout(crearVentana, 2000)
+
+      function cerrarVentana() {
+        miVentana.close()
+      }
+    </script>
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+  </body>
+</html>
