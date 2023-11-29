@@ -1,0 +1,94 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      p {
+        text-align: center;
+        font-size: 2rem;
+      }
+      .botones {
+        display: flex;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="ventana"></p>
+    <script>
+      const parrafo = document.getElementById('ventana')
+
+      window.name = 'mi ventana'
+      let texto = ''
+      texto += '<br/>Nombre: ' + window.name
+      texto += '<br/>Ancho externo: ' + window.outerWidth
+      texto += '<br/>Alto externo: ' + window.outerHeight
+      texto += '<br/>Ancho interno: ' + window.innerWidth
+      texto += '<br/>Alto interno: ' + window.innerHeight
+      texto += '<br/>Scroll horizontal: ' + window.pageXOffset
+      texto += '<br/>Scroll vertical: ' + window.pageYOffset
+      texto += '<br/>Desde borde izquierdo: ' + window.screenX
+      texto += '<br/>Desde borde superior: ' + window.screenY
+
+      parrafo.innerHTML = texto
+
+      function crearVentana() {
+        // miVentana = window.open('http://www.elpais.com')
+        miVentana = window.open('', '', 'width=500, height=400')
+        miVentana.document.write('<h1>Mi ventana</h1>')
+        miVentana.focus()
+      }
+
+      function cerrarVentana() {
+        miVentana.close()
+      }
+
+      function redimensionarVentana() {
+        miVentana.focus()
+        miVentana.resizeBy(10, 10)
+        // Numero de pixeles respecto a su parametro
+        // Tambien existe resizeTo que redimensiona a los pixeles especificos
+      }
+
+      function redimensionarMenosVentana() {
+        miVentana.focus()
+        miVentana.resizeBy(-10, -10)
+        // Numero de pixeles respecto a su parametro
+        // Tambien existe resizeTo que redimensiona a los pixeles especificos
+      }
+
+      function moverVentana() {
+        miVentana.focus()
+        miVentana.moveBy(10, 10)
+      }
+
+      function moverMenosVentana() {
+        miVentana.focus()
+        miVentana.moveBy(-10, -10)
+      }
+
+      function imprimirVentana() {
+        miVentana.focus()
+        miVentana.print()
+      }
+      
+    </script>
+    <div class="botones">
+      <button onclick="crearVentana()">Crear</button>
+      <button onclick="cerrarVentana()">Cerrar</button>
+      <button onclick="redimensionarVentana()">Redimensionar +</button>
+      <button onclick="redimensionarMenosVentana()">Redimensionar -</button>
+      <button onclick="moverVentana()">Mover +</button>
+      <button onclick="moverMenosVentana()">Mover -</button>
+      <button onclick="imprimirVentana()">Imprimir</button>
+    </div>
+  </body>
+</html>

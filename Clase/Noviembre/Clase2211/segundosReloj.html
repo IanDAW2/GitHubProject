@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RELOJ</title>
+    <style>
+      * {
+        text-align: center;
+        font-size: 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      .botones {
+        display: flex;
+        gap: 1rem;
+        &&button {
+          height: 1rem;
+          width: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p id="segundos"></p>
+    <script>
+      const parrafo = document.getElementById('segundos')
+
+      function segundos(params) {
+        parrafo.innerHTML = new Date().getSeconds()
+      }
+    </script>
+    <div class="botones">
+      <button onclick="segundo = setInterval(segundos,1000)">Ver Reloj</button>
+      <button onclick="clearTimeout(segundo)">Parar Reloj</button>
+    </div>
+  </body>
+</html>
