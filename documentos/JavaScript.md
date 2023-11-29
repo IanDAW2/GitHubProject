@@ -43,6 +43,16 @@
   - [Desestructuración de Objetos](#desestructuración-de-objetos)
     - [Metodos](#metodos-4)
 - [Objetos del navegador](#objetos-del-navegador)
+  - [Window](#window)
+    - [Metodos](#metodos-5)
+  - [History](#history)
+    - [Propiedad](#propiedad)
+    - [Metodos](#metodos-6)
+  - [Location](#location)
+  - [Eventos](#eventos)
+    - [Ejemplo](#ejemplo)
+    - [Modelo Tradicional](#modelo-tradicional)
+    - [Modelo W3C](#modelo-w3c)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
 
 # Introduccion
@@ -460,7 +470,7 @@ for (let index = 0; index <= valor; index++ /*index--*/) {
   // Codigo en bucle
 }
 
-array.forEach((clave) => {
+array.forEach(clave => {
   // codigo en bucle de los valores de un array
 })
 
@@ -500,9 +510,9 @@ Es un conjunto de elementos a los que se accede por un indice.
 ```html
 <p id="aqui"></p>
 <script>
-  const DIAS = ["lunes", "martes", "jueves", viernes]
+  const DIAS = ['lunes', 'martes', 'jueves', viernes]
   DIAS[1] = Date()
-  document.getElementById("aqui").innerHTML = DIAS
+  document.getElementById('aqui').innerHTML = DIAS
   console.log(DIAS)
 </script>
 ```
@@ -546,7 +556,7 @@ En la parte derecha los [] indican que se trata de un **array**, pero en la part
 
 ```js
 // desagrupa
-const debug = (param) => {
+const debug = param => {
   console.log(...param)
 }
 const matriz = [1, 2, 3, 4, 5]
@@ -636,9 +646,9 @@ Cuando salta un error y lo que queremos visualizar podemos utilizar lo siguiente
 
 ```js
 try {
-  console.log("Inicio de sentencias de try")
+  console.log('Inicio de sentencias de try')
   hola_caracola
-  console.log("Fin de sentencias de try (Si/ )")
+  console.log('Fin de sentencias de try (Si/ )')
 } catch (err) {
   console.log(`¡Un error ha ocurrido!`)
   console.log(err.name) // ReferenceError
@@ -672,11 +682,11 @@ Los Objetos de Alto Nivel dependen del navegador.
 **Definicion**
 
 ```js
-var ciclista = { nombre: "Pedro", apellido: "Delgado", anio: 1998 }
+var ciclista = { nombre: 'Pedro', apellido: 'Delgado', anio: 1998 }
 
 var ciclista = new Object()
-ciclista.nombre = "Pedro"
-ciclista.apellido = "Delgado"
+ciclista.nombre = 'Pedro'
+ciclista.apellido = 'Delgado'
 ciclista.edad = 35
 ```
 
@@ -771,9 +781,9 @@ Podemos simular la herencia con Prototype Ejemplos en : [Ejercicio de Prototype]
 
 ```js
 const user = {
-  name: "Manz",
+  name: 'Manz',
   talk: function () {
-    return "Hola"
+    return 'Hola'
   },
 }
 ```
@@ -801,6 +811,7 @@ JSON.stringify(obj) // Convierte un objeto JavaScript `obj` a su representacion 
 JSON.stringify(obj, props) // Idem al anterior, pero filtra y mantiene solo las propiedades del array `props`
 JSON.stringify(obj, props, spaces) // Idem al anterior, pero identa el JSON a number `spaces` espacios
 ```
+
 ## Clases
 
 _proximamente..._
@@ -811,8 +822,8 @@ Utilizando la desestrucuturacion de objetos se puede separar en variables las pr
 
 ```js
 const user = {
-  name: "Otto",
-  role: "arquero",
+  name: 'Otto',
+  role: 'arquero',
   life: 99,
 }
 // Como se desestructura...
@@ -832,8 +843,8 @@ Con un objeto que contenga metodos o elementos de DOM
 
 ```js
 const user = {
-  name: "Otto",
-  role: "arquero",
+  name: 'Otto',
+  role: 'arquero',
   life: 99,
 }
 
@@ -853,10 +864,10 @@ Pero, para valores mas complejos se utiliza el paso por referencia
 
 ```js
 const user = {
-  name: "Otto",
-  role: "arquero",
+  name: 'Otto',
+  role: 'arquero',
   life: 99,
-  features: ["learn", "code", "paint"],
+  features: ['learn', 'code', 'paint'],
 }
 
 const fullUser = {
@@ -869,7 +880,7 @@ const fullUser = {
 console.log(user.features) // ["learn", "code", "paint"]
 console.log(fullUser.features) // ["learn", "code", "paint"]
 
-fullUser.features[0] = "program"
+fullUser.features[0] = 'program'
 
 console.log(user.features) // ["program", "code", "paint"]
 console.log(fullUser.features) // ["program", "code", "paint"]
@@ -886,10 +897,10 @@ el objeto a copiar. Esta funcion hara, ahora si, una copia, devolviendo un nuevo
 
 ```js
 const user = {
-  name: "Otto",
-  role: "arquero",
+  name: 'Otto',
+  role: 'arquero',
   life: 99,
-  features: ["learn", "code", "paint"],
+  features: ['learn', 'code', 'paint'],
 }
 
 const fullUser = {
@@ -902,7 +913,7 @@ const fullUser = {
 console.log(user.features) // ["learn", "code", "paint"]
 console.log(fullUser.features) // ["learn", "code", "paint"]
 
-fullUser.features[0] = "program"
+fullUser.features[0] = 'program'
 
 console.log(user.features) // ["learn", "code", "paint"]
 console.log(fullUser.features) // ["program", "code", "paint"]
@@ -920,6 +931,104 @@ Object.keys(obj) // Devuelve Array de los indices del iterable(en una cadena ---
 Object.values(obj) // Devuelve Array de los contenidos del iterable
 Object.entries(obj) // Devuelve Array de los pares claves:valor
 ```
+
 # Objetos del navegador
+
+BOM (Browser Object Model). Permite que JS se comunique con el navegador obteniendo y manipulando sus caracteristicas.
+
+Son los llamados **OBJETOS DE ALTO NIVEL** y dependen del navegador:
+
+- Window
+- Screen
+- Navigator
+- Location
+- History
+- Event
+- Document
+
+## Window
+
+Se utiliza para tratar con las ventanas del navegador
+
+### Metodos
+
+```js
+window.open() // permite abrir una nueva ventana, pudiendo indicar que url se va a cargar en ella y que caracteristicas va a tener.
+window.close() // permite cerrar la ventana que ha llamado el metodo
+window.resizeBy() // redimensiona la ventana a un numero de pixeles en relacion con el tamaño que tiene actualmente
+window.resizeTo() // ''
+window.moveBy() // mueve la ventana a un numero de pixeles en relacion con el tamaño que tiene actualmente
+window.moveTo() // ''
+```
+
+## History
+
+Para consultar las URL de las paginas que ha visitado un usuario dentro de una ventana de navegador. Permite manipular el historial utilizando JS sin necesidad de interactuar con el propio navegador.
+
+### Propiedad
+
+- lenght: almacena el numero de paginas que contiene el historial
+
+`history.length`
+
+### Metodos
+
+- back
+- forward
+- go
+
+```js
+function atras() {
+  // funcion para utilizarlo con un boton
+  history.back() // retorna a la pagina anterior
+}
+history.forward() // avanza a la pagina siguiente
+history.go() // redirige a la pagina deseada
+```
+
+## Location
+
+Almaccena la infomacion de la URL de la pagina
+
+```js
+'Href: ' + location.href
+'Hostname: ' + location.hostname
+'Hash: ' + location.hash
+'Host: ' + location.host
+```
+
+## Eventos
+
+Un evento es cualquier suceso que puede producirse en un elemento de una pagina WEB, un mecanismo que puede provocar una reaccion mediante la ejecucion de un metodo.
+
+### Ejemplo
+
+Este codigo tiene un titulo con el texto de `Hazme Click!` y cuando se le da click al elemento cambia el texto por `mi texto`. Aparte cuando el raton pasa por encima cambia el color del fondo por rojo y cuando deja de estar encima vuelve al color por defecto.
+
+```html
+<h1
+  onclick="this.innerHTML = 'mi texto'"
+  onmouseover="this.style.backgroundColor = 'red'"
+  onmouseleave="this.style.backgroundColor = ''"
+>
+  Hazme Click!
+</h1>
+```
+
+### Modelo Tradicional
+
+¿En que consiste un modelo de eventos tradicional?
+
+Consiste en aplicar sobre un elemento seleccionado a traves de JavaScript.
+
+### Modelo W3C
+
+Con el metodo `addEventListener()`
+
+Parametros:
+
+- El evento
+- la funcion a ejecutar
+- Opcional true/false de momento siempre pondremos false
 
 # Objetos definidos por el usuario
