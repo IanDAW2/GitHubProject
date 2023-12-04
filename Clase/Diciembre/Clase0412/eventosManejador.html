@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manejador de Eventos</title>
+  </head>
+  <body>
+    <h1 id="eventos">Obtener Información</h1>
+    <h2 id="parrafo1">Párrafo 1</h2>
+    <h2 id="parrafo2">Párrafo 2</h2>
+
+    <script>
+      document.getElementById('eventos').addEventListener('mouseover', manejador, false)
+      document.getElementById('eventos').addEventListener('mouseout', manejador, false)
+
+      document.getElementById('parrafo1').addEventListener('click', saludo, false)
+      document.getElementById('parrafo2').addEventListener('click', saludo, false)
+
+      function manejador(e) {
+        switch (e.type) {
+          case 'mouseover':
+            this.style.color = 'red'
+            break
+          case 'mouseout':
+            this.style.color = 'blue'
+            break
+        }
+      }
+
+      function saludo(e) {
+        alert(`Has pulsado ${e.target.textContent}`)
+      }
+    </script>
+  </body>
+</html>
