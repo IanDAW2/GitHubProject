@@ -29,6 +29,6 @@ const usuarioJoven = usuarios.reduce((min, usuario) => (usuario.edad > min ? min
 
 console.log(usuarioJoven)
 
-const usuariosA = usuarios.filter(usuario => (usuario.nombre.startsWith('A') ? usuario : null))
+const usuariosA = usuarios.filter(usuario => usuario.nombre.startsWith('A'))
 
 console.log(usuariosA)

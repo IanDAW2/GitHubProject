@@ -18,7 +18,21 @@ const mayores25 = usuarios.filter(usuario => usuario.edad > 25)
 
 console.log(mayores25)
 
-const duplicarEdad = mayores25.map((usuario) => {
+// 1º forma Profesor
+/*
+const duplicarEdad = usuarios => usuarios.map(usuario => ({...usuario,edad:usuario.edad*2}))
+
+const usuarioEdadDuplicada = duplicarEdad(mayores25)
+console.log(usuarioEdadDuplicada)
+
+const sumaTotal = usuarioEdadDuplicada.reduce((suma, usuario) => (suma += usuario.edad), 0)
+
+console.log(sumaTotal)
+*/
+
+//2º forma YO
+
+const duplicarEdad = mayores25.map(usuario => {
   usuario.edad *= 2
   return usuario
 })
