@@ -19,8 +19,20 @@ const mayoresDeEdad = usuarios.filter(usuario => usuario.edad >= 18)
 
 // console.log(mayoresDeEdad)
 
+<<<<<<< HEAD
 const promedioEdades = (usuarios.reduce((total, usuario) => (total += usuario.edad), 0) / usuarios.length).toFixed(2)
+=======
+const promedioEdades = (
+  usuarios.reduce((total, usuario) => (total += usuario.edad), 0) / usuarios.length
+).toFixed(2)
+>>>>>>> EjerObjetosPF2
 
 console.log(promedioEdades)
 
-console.log(typeof usuarios.length)
+const usuarioJoven = usuarios.reduce((min, usuario) => (usuario.edad > min ? min : usuario))
+
+console.log(usuarioJoven)
+
+const usuariosA = usuarios.filter(usuario => usuario.nombre.startsWith('A'))
+
+console.log(usuariosA)
