@@ -25,4 +25,10 @@ const promedioEdades = (
 
 console.log(promedioEdades)
 
-console.log(typeof usuarios.length)
+const usuarioJoven = usuarios.reduce((min, usuario) => (usuario.edad > min ? min : usuario))
+
+console.log(usuarioJoven)
+
+const usuariosA = usuarios.filter(usuario => (usuario.nombre.startsWith('A') ? usuario : null))
+
+console.log(usuariosA)
