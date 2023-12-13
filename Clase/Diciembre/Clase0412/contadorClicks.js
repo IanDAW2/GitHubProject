@@ -4,16 +4,16 @@ const parrafo = document.getElementById('clicks')
 var contador = 0
 
 boton.addEventListener('click', contadorSumaResta)
-boton.addEventListener('auxclick', contadorSumaResta)
-document.oncontextmenu = () => false
+boton.addEventListener('contextmenu', contadorSumaResta)
 
 function contadorSumaResta(e) {
+  e.preventDefault()
   switch (e.type) {
     case 'click':
       contador++
       parrafo.textContent = contador
       break
-    case 'auxclick':
+    case 'contextmenu':
       contador--
       parrafo.textContent = contador
       break
