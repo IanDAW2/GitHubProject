@@ -6,7 +6,6 @@ var contador = 0
 boton.addEventListener('click', contadorSumaResta)
 boton.addEventListener('auxclick', contadorSumaResta)
 document.oncontextmenu = () => false
-// menosBoton.addEventListener('click', contadorSumaResta, false)
 
 function contadorSumaResta(e) {
   switch (e.type) {

@@ -53,6 +53,7 @@
     - [Ejemplo](#ejemplo)
     - [Modelo Tradicional](#modelo-tradicional)
     - [Modelo W3C](#modelo-w3c)
+- [Programación funcional](#programación-funcional)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
 
 # Introduccion
@@ -1030,5 +1031,9 @@ Parametros:
 - El evento
 - la funcion a ejecutar
 - Opcional true/false de momento siempre pondremos false
+
+# Programación funcional
+
+
 
 # Objetos definidos por el usuario
