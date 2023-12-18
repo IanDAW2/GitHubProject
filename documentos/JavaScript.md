@@ -35,19 +35,12 @@
 - [Objetos nativos](#objetos-nativos)
   - [Objetos String](#objetos-string)
   - [Objetos Number](#objetos-number)
-  - [Constructores](#constructores)
-    - [Crear metodos](#crear-metodos)
-  - [JSON](#json)
-    - [Metodos](#metodos-3)
-  - [Clases](#clases)
-  - [Desestructuración de Objetos](#desestructuración-de-objetos)
-    - [Metodos](#metodos-4)
 - [Objetos del navegador](#objetos-del-navegador)
   - [Window](#window)
-    - [Metodos](#metodos-5)
+    - [Metodos](#metodos-3)
   - [History](#history)
     - [Propiedad](#propiedad)
-    - [Metodos](#metodos-6)
+    - [Metodos](#metodos-4)
   - [Location](#location)
   - [Eventos](#eventos)
     - [Ejemplo](#ejemplo)
@@ -55,6 +48,13 @@
     - [Modelo W3C](#modelo-w3c)
 - [Programación funcional](#programación-funcional)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
+  - [Constructores](#constructores)
+    - [Crear metodos](#crear-metodos)
+  - [JSON](#json)
+    - [Metodos](#metodos-5)
+  - [Clases](#clases)
+  - [Desestructuración de Objetos](#desestructuración-de-objetos)
+    - [Metodos](#metodos-6)
 
 # Introduccion
 
@@ -762,6 +762,114 @@ Las cadenas pueden:
   var aleatorio = Math.floor(Math.random()*11) // Numero aleatorio entre 0 y 10
 ```
 
+# Objetos del navegador
+
+BOM (Browser Object Model). Permite que JS se comunique con el navegador obteniendo y manipulando sus caracteristicas.
+
+Son los llamados **OBJETOS DE ALTO NIVEL** y dependen del navegador:
+
+- Window
+- Screen
+- Navigator
+- Location
+- History
+- Event
+- Document
+
+## Window
+
+Se utiliza para tratar con las ventanas del navegador
+
+### Metodos
+
+```js
+window.open() // permite abrir una nueva ventana, pudiendo indicar que url se va a cargar en ella y que caracteristicas va a tener.
+window.close() // permite cerrar la ventana que ha llamado el metodo
+window.resizeBy() // redimensiona la ventana a un numero de pixeles en relacion con el tamaño que tiene actualmente
+window.resizeTo() // ''
+window.moveBy() // mueve la ventana a un numero de pixeles en relacion con el tamaño que tiene actualmente
+window.moveTo() // ''
+```
+
+## History
+
+Para consultar las URL de las paginas que ha visitado un usuario dentro de una ventana de navegador. Permite manipular el historial utilizando JS sin necesidad de interactuar con el propio navegador.
+
+### Propiedad
+
+- lenght: almacena el numero de paginas que contiene el historial
+
+`history.length`
+
+### Metodos
+
+- back
+- forward
+- go
+
+```js
+function atras() {
+  // funcion para utilizarlo con un boton
+  history.back() // retorna a la pagina anterior
+}
+history.forward() // avanza a la pagina siguiente
+history.go() // redirige a la pagina deseada
+```
+
+## Location
+
+Almaccena la infomacion de la URL de la pagina
+
+```js
+'Href: ' + location.href
+'Hostname: ' + location.hostname
+'Hash: ' + location.hash
+'Host: ' + location.host
+```
+
+## Eventos
+
+Un evento es cualquier suceso que puede producirse en un elemento de una pagina WEB, un mecanismo que puede provocar una reaccion mediante la ejecucion de un metodo.
+
+### Ejemplo
+
+Este codigo tiene un titulo con el texto de `Hazme Click!` y cuando se le da click al elemento cambia el texto por `mi texto`. Aparte cuando el raton pasa por encima cambia el color del fondo por rojo y cuando deja de estar encima vuelve al color por defecto.
+
+```html
+<h1
+  onclick="this.innerHTML = 'mi texto'"
+  onmouseover="this.style.backgroundColor = 'red'"
+  onmouseleave="this.style.backgroundColor = ''"
+>
+  Hazme Click!
+</h1>
+```
+
+### Modelo Tradicional
+
+¿En que consiste un modelo de eventos tradicional?
+
+Consiste en aplicar sobre un elemento seleccionado a traves de JavaScript.
+
+### Modelo W3C
+
+Con el metodo `addEventListener()`
+
+Parametros:
+
+- El evento
+- la funcion a ejecutar
+- Opcional true/false de momento siempre pondremos false
+
+# Programación funcional
+
+Ejercicios realizados en:
+
+| [PROG-FUNCIONAL](https://github.com/IanDAW2/GitHubProject/blob/810acb300359042dde71fdf4494661e59e18e088/Ejercicios/ProgFuncional/progFuncional.js) | [PRACTICA-201](https://github.com/IanDAW2/GitHubProject/blob/810acb300359042dde71fdf4494661e59e18e088/Ejercicios/Practica201/201.js) |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+
+# Objetos definidos por el usuario
+
 ## Constructores
 
 ```js
@@ -932,108 +1040,3 @@ Object.keys(obj) // Devuelve Array de los indices del iterable(en una cadena ---
 Object.values(obj) // Devuelve Array de los contenidos del iterable
 Object.entries(obj) // Devuelve Array de los pares claves:valor
 ```
-
-# Objetos del navegador
-
-BOM (Browser Object Model). Permite que JS se comunique con el navegador obteniendo y manipulando sus caracteristicas.
-
-Son los llamados **OBJETOS DE ALTO NIVEL** y dependen del navegador:
-
-- Window
-- Screen
-- Navigator
-- Location
-- History
-- Event
-- Document
-
-## Window
-
-Se utiliza para tratar con las ventanas del navegador
-
-### Metodos
-
-```js
-window.open() // permite abrir una nueva ventana, pudiendo indicar que url se va a cargar en ella y que caracteristicas va a tener.
-window.close() // permite cerrar la ventana que ha llamado el metodo
-window.resizeBy() // redimensiona la ventana a un numero de pixeles en relacion con el tamaño que tiene actualmente
-window.resizeTo() // ''
-window.moveBy() // mueve la ventana a un numero de pixeles en relacion con el tamaño que tiene actualmente
-window.moveTo() // ''
-```
-
-## History
-
-Para consultar las URL de las paginas que ha visitado un usuario dentro de una ventana de navegador. Permite manipular el historial utilizando JS sin necesidad de interactuar con el propio navegador.
-
-### Propiedad
-
-- lenght: almacena el numero de paginas que contiene el historial
-
-`history.length`
-
-### Metodos
-
-- back
-- forward
-- go
-
-```js
-function atras() {
-  // funcion para utilizarlo con un boton
-  history.back() // retorna a la pagina anterior
-}
-history.forward() // avanza a la pagina siguiente
-history.go() // redirige a la pagina deseada
-```
-
-## Location
-
-Almaccena la infomacion de la URL de la pagina
-
-```js
-'Href: ' + location.href
-'Hostname: ' + location.hostname
-'Hash: ' + location.hash
-'Host: ' + location.host
-```
-
-## Eventos
-
-Un evento es cualquier suceso que puede producirse en un elemento de una pagina WEB, un mecanismo que puede provocar una reaccion mediante la ejecucion de un metodo.
-
-### Ejemplo
-
-Este codigo tiene un titulo con el texto de `Hazme Click!` y cuando se le da click al elemento cambia el texto por `mi texto`. Aparte cuando el raton pasa por encima cambia el color del fondo por rojo y cuando deja de estar encima vuelve al color por defecto.
-
-```html
-<h1
-  onclick="this.innerHTML = 'mi texto'"
-  onmouseover="this.style.backgroundColor = 'red'"
-  onmouseleave="this.style.backgroundColor = ''"
->
-  Hazme Click!
-</h1>
-```
-
-### Modelo Tradicional
-
-¿En que consiste un modelo de eventos tradicional?
-
-Consiste en aplicar sobre un elemento seleccionado a traves de JavaScript.
-
-### Modelo W3C
-
-Con el metodo `addEventListener()`
-
-Parametros:
-
-- El evento
-- la funcion a ejecutar
-- Opcional true/false de momento siempre pondremos false
-
-# Programación funcional
-
-
-
-# Objetos definidos por el usuario
