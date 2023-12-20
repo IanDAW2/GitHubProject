@@ -36,16 +36,19 @@
   - [Objetos String](#objetos-string)
   - [Objetos Number](#objetos-number)
 - [Objetos del navegador](#objetos-del-navegador)
-  - [Window](#window)
-    - [Metodos](#metodos-3)
-  - [History](#history)
-    - [Propiedad](#propiedad)
-    - [Metodos](#metodos-4)
-  - [Location](#location)
-  - [Eventos](#eventos)
-    - [Ejemplo](#ejemplo)
-    - [Modelo Tradicional](#modelo-tradicional)
-    - [Modelo W3C](#modelo-w3c)
+  - [BOM](#bom)
+    - [Window](#window)
+      - [Metodos](#metodos-3)
+    - [History](#history)
+      - [Propiedad](#propiedad)
+      - [Metodos](#metodos-4)
+    - [Location](#location)
+    - [Eventos](#eventos)
+      - [Ejemplo](#ejemplo)
+      - [Modelo Tradicional](#modelo-tradicional)
+      - [Modelo W3C](#modelo-w3c)
+  - [DOM](#dom)
+    - [Propiedades de los nodos](#propiedades-de-los-nodos)
 - [Programación funcional](#programación-funcional)
 - [Objetos definidos por el usuario](#objetos-definidos-por-el-usuario)
   - [Constructores](#constructores)
@@ -764,6 +767,8 @@ Las cadenas pueden:
 
 # Objetos del navegador
 
+## BOM
+
 BOM (Browser Object Model). Permite que JS se comunique con el navegador obteniendo y manipulando sus caracteristicas.
 
 Son los llamados **OBJETOS DE ALTO NIVEL** y dependen del navegador:
@@ -776,11 +781,11 @@ Son los llamados **OBJETOS DE ALTO NIVEL** y dependen del navegador:
 - Event
 - Document
 
-## Window
+### Window
 
 Se utiliza para tratar con las ventanas del navegador
 
-### Metodos
+#### Metodos
 
 ```js
 window.open() // permite abrir una nueva ventana, pudiendo indicar que url se va a cargar en ella y que caracteristicas va a tener.
@@ -791,17 +796,17 @@ window.moveBy() // mueve la ventana a un numero de pixeles en relacion con el ta
 window.moveTo() // ''
 ```
 
-## History
+### History
 
 Para consultar las URL de las paginas que ha visitado un usuario dentro de una ventana de navegador. Permite manipular el historial utilizando JS sin necesidad de interactuar con el propio navegador.
 
-### Propiedad
+#### Propiedad
 
 - lenght: almacena el numero de paginas que contiene el historial
 
 `history.length`
 
-### Metodos
+#### Metodos
 
 - back
 - forward
@@ -816,7 +821,7 @@ history.forward() // avanza a la pagina siguiente
 history.go() // redirige a la pagina deseada
 ```
 
-## Location
+### Location
 
 Almaccena la infomacion de la URL de la pagina
 
@@ -827,11 +832,11 @@ Almaccena la infomacion de la URL de la pagina
 'Host: ' + location.host
 ```
 
-## Eventos
+### Eventos
 
 Un evento es cualquier suceso que puede producirse en un elemento de una pagina WEB, un mecanismo que puede provocar una reaccion mediante la ejecucion de un metodo.
 
-### Ejemplo
+#### Ejemplo
 
 Este codigo tiene un titulo con el texto de `Hazme Click!` y cuando se le da click al elemento cambia el texto por `mi texto`. Aparte cuando el raton pasa por encima cambia el color del fondo por rojo y cuando deja de estar encima vuelve al color por defecto.
 
@@ -845,13 +850,13 @@ Este codigo tiene un titulo con el texto de `Hazme Click!` y cuando se le da cli
 </h1>
 ```
 
-### Modelo Tradicional
+#### Modelo Tradicional
 
 ¿En que consiste un modelo de eventos tradicional?
 
 Consiste en aplicar sobre un elemento seleccionado a traves de JavaScript.
 
-### Modelo W3C
+#### Modelo W3C
 
 Con el metodo `addEventListener()`
 
@@ -861,6 +866,23 @@ Parametros:
 - la funcion a ejecutar
 - Opcional true/false de momento siempre pondremos false
 
+## DOM
+
+### Propiedades de los nodos
+
+Dependiendo del nodo que utilicemos podemos utilizar todos o alguno de las siguiente propiedades para recoger su informacion.
+
+- .innerHTML
+- .textContent
+- .value
+
+Podemos acceder a los nodos a partir de diferentes metodos.
+
+- getElementById: Devuelve el primer nodo que coicide por el Id
+- getElement**s**ByClassName: Devuelve todos los nodos en un array que coinciden con el nombre de la clase de la etiqueta
+- getElement**s**ByTagName: Devuelve todos los nodos en un array que coinciden con el nombre de la etiqueta 
+- querySelector(): Devuelve el primer nodo que coicide por el selector de CSS
+  
 # Programación funcional
 
 Ejercicios realizados en:
