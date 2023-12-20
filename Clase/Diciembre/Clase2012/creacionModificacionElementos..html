@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Creacion y modificacion de elementos</title>
+    <style>
+      .miClase {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <p id="parrafo1">Este es el primer parrafo</p>
+      <p id="parrafo2">Este es el segundo parrafo</p>
+      <p id="parrafo3" class="miClase">Este es el tercer parrafo</p>
+    </div>
+    <br />
+    <button id="cambiarTextos">Cambiar texto de parrafos</button>
+    <button id="cambiarClases">Cambiar clases de parrafos</button>
+    <button id="quitarClases">Quitar clases de todos los parrafos</button>
+  </body>
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('cambiarTextos').addEventListener('click', () => {
+        Array.from(document.getElementsByTagName('p')).forEach((element, index) => {
+          element.textContent = `Pruebas de parrafos en ${index}`
+        })
+      })
+
+      document.getElementById('cambiarClases').addEventListener('click', () => {
+        document.getElementById('parrafo1').setAttribute('class', 'miClase')
+        document.getElementById('parrafo2').className = 'miClase'
+      })
+
+      document.getElementById('quitarClases').addEventListener('click', () => {
+        document.getElementById('parrafo1').setAttribute('class', '') // Forma 1
+        document.getElementById('parrafo2').className = '' // Forma 2
+        Array.from(document.getElementsByClassName('miClase')).forEach(elemento => {
+          elemento.removeAttribute('class') 
+        }) // Forma 3
+      })
+    })
+  </script>
+</html>

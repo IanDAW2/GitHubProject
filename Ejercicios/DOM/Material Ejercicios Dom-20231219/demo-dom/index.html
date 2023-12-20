@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Agustin.Prf" />
+        <title>Lista de la compra</title>
+        <script src="./demostracion-dom.js"></script>     
+        <link rel="stylesheet" type="text/css" href="estilos.css" />          
+    </head>
+    <body>
+        <h1> Lista de Elementos</h1>
+        <ul id="lista">          
+            <li id="primero">Primer Elemento</li>
+            <li>Segundo Elemento</li>
+            <li>Tercer Elemento</li>
+            <li>Cuarto Elemento</li>
+            <!-- Añadir aqui el resto de elementos-->
+        </ul>
+        <input type="text" id="contenido" value=""/>
+        <input type="button" value="Añadir" onclick="anadirElemento()" />
+        <input type="button" value="Limpiar" onclick="limpiarLista()" />
+    </body>
+</html>

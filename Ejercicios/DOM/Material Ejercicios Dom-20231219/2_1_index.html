@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 2.1</title>
+    <style></style>
+  </head>
+  <body>
+    <h1 id="tituloDinamico">Este es un titulo dinamico</h1>
+    <button id="cambiarColor">Cambiar Color</button>
+    <button id="cambiarTamaño">Cambiar Tamaño de Fuente</button>
+    <script>
+      window.addEventListener('load', () => {
+        const titulo = document.getElementById('tituloDinamico')
+        var contador = 1
+
+        // JavaScript para cambiar el color del título
+        document.getElementById('cambiarColor').addEventListener('click', () => {
+          titulo.style.color = `rgb(
+            ${Math.floor(Math.random() * 256)},
+            ${Math.floor(Math.random() * 256)},
+            ${Math.floor(Math.random() * 256)}
+            )`
+        })
+
+        // JavaScript para cambiar el tamaño de fuente del título
+        document.getElementById('cambiarTamaño').addEventListener('click', cambiarTamaño)
+        document.getElementById('cambiarTamaño').addEventListener('contextmenu', cambiarTamaño)
+
+        function cambiarTamaño(evento) {
+          evento.preventDefault()
+          switch (evento.type) {
+            case 'click':
+              contador++
+              titulo.style.fontSize = `${contador}rem`
+              break
+            case 'contextmenu':
+              contador--
+              titulo.style.fontSize = `${contador}rem`
+              break
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
