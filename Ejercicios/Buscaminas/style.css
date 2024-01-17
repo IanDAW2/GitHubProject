@@ -1,5 +1,26 @@
-html{
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#tabla {
+  display: grid;
+  background-color: black;
+  /* grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); */
+}
+#tabla button {
+  width: 30px;
+  height: 30px;
+  /* background-image: url('assets/mine-50.png');
+  background-size: cover; */
 }
