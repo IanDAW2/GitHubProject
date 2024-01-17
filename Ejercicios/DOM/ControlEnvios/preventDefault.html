@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo preventDefault</title>
+  </head>
+  <body>
+    <form id="form">
+      <p id="parrafo">Maquina apagada</p>
+      <input type="button" id="boton" value="Encender" />
+    </form>
+    <script>
+      window.addEventListener('load', () => {
+        const form = document.getElementById('form')
+        const p = document.getElementById('parrafo')
+        const boton = document.getElementById('boton')
+
+        boton.addEventListener('click', e => {
+          e.preventDefault()
+          // console.log('evento del submit')
+
+          if (boton.value === 'Encender') {
+            p.innerHTML = 'Maquina encendida'
+            boton.value = 'Apagar'
+          } else {
+            p.innerHTML = 'Maquina apagada'
+            boton.value = 'Encender'
+          }
+          // switch (boton.value) {
+          //   case 'Encender':
+          // p.innerHTML = 'Maquina encendida'
+          //   boton.value = 'Apagar'
+          //     break
+          //   case 'Apagar':
+          // p.innerHTML = 'Maquina apagada'
+          //   boton.value = 'Encender'
+          //     break
+          // }
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <form action="mailto:micursodawbarajas@gmail.com" enctype="multipart/form-data">
+      <p>
+        <label>
+          Nombre:
+          <input type="text" name="nombre" id="nombre" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Apellidos:
+          <input type="text" name="apellidos" id="apellido" />
+        </label>
+      </p>
+      <p>
+        <label>
+          DNI:
+          <input type="text" name="DNI" id="dni" maxlength="10" />
+        </label>
+      </p>
+
+      <p>
+        Sexo
+        <br />
+        <label>
+          <input type="radio" name="sexo" id="hombre" value="Hombre" />
+          Hombre
+        </label>
+        <br />
+        <label>
+          <input type="radio" name="sexo" id="mujer" value="Mujer" />
+          Mujer
+        </label>
+      </p>
+
+      <p>
+        <label>
+          Incluir mi foto:
+          <input type="file" name="" id="" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" name="publi" id="publi" checked />
+          Enviar publicidad
+        </label>
+      </p>
+      <p>
+        <input type="submit" value="Guardar Cambios" id="submit" />
+        <input type="reset" value="Borrar los datos introducidos" id="reset" />
+      </p>
+    </form>
+    <script>
+      window.addEventListener('load', () => {
+        const submit = document.getElementById('submit')
+        const form = document.querySelector('form')
+        const lastP = document.querySelector('p:last-child')
+        const mensaje = document.createElement('a')
+        var cont = 0
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          if (cont === 0) {
+            mensaje.style.color = 'red'
+            mensaje.innerHTML = '¿Estas seguro de Guardar los cambios?'
+            lastP.appendChild(mensaje)
+            cont++
+          } else if (cont === 1) {
+            mensaje.style.color = 'green'
+            mensaje.innerHTML = 'Confirmado'
+            form.submit()
+            cont--
+          }
+        })
+        form.addEventListener('reset', e => {
+          mensaje.remove()
+          cont = 0
+          document.querySelector('input[type="text"]').focus()
+        })
+      })
+    </script>
+  </body>
+</html>
