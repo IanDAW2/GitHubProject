@@ -8,7 +8,7 @@ if (typeof Storage !== 'undefined') {
       'nombre'
     )}!✌`
   } else {
-    localStorage.setItem('nombre', prompt('Ingresa tu nombre'))
+    localStorage.setItem('nombre', prompt('Ingresa tu nombre')?? 'Anónimo')
     document.getElementById('saludo').innerHTML = `Encantado ${localStorage.getItem('nombre')}!🙌`
   }
 
