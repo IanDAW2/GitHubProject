@@ -1,5 +1,4 @@
 if (typeof Storage !== 'undefined') {
-  // Código para localStorage/sessionStorage.
 
   alert('Si hay soporte para localStorage/sessionStorage')
 
