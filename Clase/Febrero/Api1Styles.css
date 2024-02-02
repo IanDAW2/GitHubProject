@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+html {
+  color-scheme: dark light;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #505050;
+}
+
+h1 {
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'Honk', system-ui;
+}
+
+#contenidoAPI {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4rem;
+  padding: 1rem;
+}
+
+.usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 60%;
+  background-color: #a3a3a3;
+  box-shadow: 0 0 10px 5px #000000;
+}
+
+img {
+  margin-top: 2rem;
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+}
+
+p {
+  color: #000000;
+  font-size: 2rem;
+}
