@@ -20,16 +20,12 @@ function generarTableroJS(event) {
       console.log(matriz)
       break
     case botonIntermedio: // En el modo intermedio tendremos una tabla de 16x16
-    //   tabla.style.cssText += `grid-template-rows: repeat(16, 1fr);
-    // grid-template-columns: repeat(16, 1fr);`
       matriz = []
       for (let index = 0; index < 16; index++) matriz.push({ index: {} })
       dibujarTableroHTML(16, 16)
       console.log(matriz)
       break
     case botonDificil: // En el modo dificil tendremos una tabla de 30x16
-    //   tabla.style.cssText += `grid-template-columns: repeat(30, 1fr);
-    // grid-template-rows: repeat(16, 1fr);`
       matriz = []
       for (let index = 0; index < 16; index++) matriz.push({ index: {} })
       dibujarTableroHTML(30, 16)
@@ -57,12 +53,21 @@ function colocarBombasTableroJS(numBombas) {
 
 function dibujarTableroHTML(numBTCol, numBTFil) {
   // Colocamos los botones en el tablero
-  tabla.remove()
-  document.body.append(tabla)
-  // if (tabla.children.length > 0) tabla.remove(tabla.children)
+  // tabla.remove()
+  // document.body.append(tabla)
+  // if (tabla.children.length > 0) tabla.childNodes.forEach(n => n.remove())
 
+  if (document.querySelector('.tabla')) {
+    document.querySelector('.tabla').remove()
+    console.log('Se ha eliminado la tabla')
+  }
+
+  const tabla = document.createElement('div')
+  tabla.classList.add('tabla')
   tabla.style.cssText += `grid-template-rows: repeat(${numBTFil}, 1fr);
   grid-template-columns: repeat(${numBTCol}, 1fr);`
+
+  document.querySelector('main').append(tabla)
 
   for (let indexFil = 0; indexFil < numBTFil; indexFil++) {
     for (let indexCol = 0; indexCol < numBTCol; indexCol++) {
