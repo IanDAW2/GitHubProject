@@ -1,0 +1,78 @@
+<html lang="es">
+  <head>
+    <!-- Author: Ian Burford Gonzalez -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV2A-1IBG</title>
+    <!-- Define una clase Animal  con las propiedades nombre, edad, patas, especie y estado.
+Y el método introduce() que devuelva “Hola, mi nombre es [nombre] y tengo [edad] años.”
+Define ahora las siguientes clases que heredan de Animal. 
+
+    I. Tiburon. La función constructora para Tiburon debe aceptar 3 argumentos en total en el siguiente orden: nombre, edad, estado. Todos los tiburones pertenecen a la especie de Escualos.
+
+    II. Gato. La función constructora para Gato debe aceptar los mismos 3 argumentos que Tiburon: nombre, edad, estado. Los gatos pertenecen a la especie Felinos. Además, su método introduce() debe ser idéntico al original, excepto que debe haber exactamente 2 espacios en blanco antes de añadir las palabras "¡Miau, miau!". 
+
+    III. Perro. El constructor de la clase Perro debe aceptar 4 argumentos en el orden especificado: nombre, edad, estado, dueño, donde dueño ( que es un string) es el nombre del propietario del perro. Además, los perros, que pertenecen a la especie Canidos,  tienen un método introduce() como cualquier otro animal, pero tienen su propio método llamado saludaDueño() que no acepta argumentos y devuelve "Hola [nombre del dueño]”
+
+    IV. Ejemplos de uso .- Crea:
+
+    • Un tiburón llamado Chum de 5 años y estado hambriento
+    • Un gato llamado Silvestre de 3 años y estado juguetón
+    • El perro de Pepe,  Cane de 2 años y estado feliz 
+        Y muestra por consola sus métodos correspondientes -->
+  </head>
+  <body>
+    <script>
+      class Animal {
+        constructor(nombre, edad, patas, especie, estado) {
+          this.nombre = nombre
+          this.edad = edad
+          this.patas = patas
+          this.especie = especie
+          this.estado = estado
+        }
+        introduce() {
+          return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`
+        }
+      }
+
+      class Tiburon extends Animal {
+        constructor(nombre, edad, estado) {
+          super(nombre, edad, 0, 'Escualos', estado)
+        }
+      }
+
+      class Gato extends Animal {
+        constructor(nombre, edad, estado) {
+          super(nombre, edad, 4, 'Felinos', estado)
+        }
+        introduce() {
+          return `${super.introduce()}  ¡Miau, miau!`
+        }
+      }
+
+      class Perro extends Animal {
+        constructor(nombre, edad, estado, dueno) {
+          super(nombre, edad, 4, 'Canidos', estado)
+          this.dueno = dueno
+        }
+        introduce() {
+          return super.introduce()
+        }
+        saludaDueno() {
+          return `Hola ${this.dueno}`
+        }
+      }
+
+      const chum = new Tiburon('Chum', 5, 'hambriento')
+      const silvestre = new Gato('Silvestre', 3, 'jugueton')
+      const cane = new Perro('Cane', 2, 'feliz', 'Pepe')
+
+      // Muestra por consola sus métodos correspondientes
+      console.log(chum.introduce())
+      console.log(silvestre.introduce())
+      console.log(cane.introduce())
+      console.log(cane.saludaDueno())
+    </script>
+  </body>
+</html>

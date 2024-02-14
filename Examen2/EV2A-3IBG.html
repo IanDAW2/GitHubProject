@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Author: Ian Burford Gonzalez -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input,
+      button {
+        margin-bottom: 10px;
+        padding: 8px;
+      }
+
+      button {
+        background-color: #620af0;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #5445a0;
+      }
+
+      .error {
+        color: #ff0000;
+        font-size: 14px;
+      }
+    </style>
+    <title>Formulario de Registro Examen</title>
+    <!-- Con el código proporcionado, desarrolla un formulario de registro de usuarios. Debes implementar la validación del formulario para garantizar que los usuarios introduzcan la información de manera adecuada.
+Requisitos del formulario:
+1.Nombre:
+    • Debe contener solo letras (sin espacios).
+    • No puede estar en blanco.
+2.Correo electrónico:
+    • Debe tener un formato de dirección de correo electrónico válido.
+3.Contraseña:
+    • Debe tener al menos 8 caracteres de longitud.
+    • Debe incluir al menos una letra mayúscula, una letra minúscula y un número.
+4.Confirmación de contraseña:
+    • Debe coincidir con la contraseña introducida en el campo anterior.
+5.Número de teléfono:
+    • Debe contener solo números.
+    • Nueve dígitos
+Tareas a realizar:
+1.	Implementa la validación en JavaScript:
+    • Valida cada campo del formulario según los requisitos mencionados anteriormente.
+    • Muestra mensajes de error específicos para cada campo si la validación falla.
+    • Deshabilita el envío del formulario si hay errores de validación.
+2.	Mejora la experiencia del usuario:
+    • Agrega un mensaje de éxito cuando el formulario se envíe correctamente.
+    • Realiza la validación en tiempo real mientras el usuario completa el formulario.
+    • Lleva el foco al elemento que provoca el error 
+
+Los mensajes deben aparecer en la zona final del formulario justo debajo del botón de registrarse.  -->
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Formulario de Registro</h2>
+
+      <form id="formRegistro">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="numTelefono">Número de Teléfono:</label>
+        <input type="text" id="numTelefono" name="numTelefono" required />
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" required />
+        <label for="confirmContraseña">Confirmar contraseña:</label>
+        <input type="password" id="confirmContraseña" name="confirmContraseña" required />
+
+        <button type="submit" value="Registro" id="resgistrarse">Registro</button>
+      </form>
+
+      <div id="messages"></div>
+    </div>
+
+    <script>
+      window.addEventListener('load', () => {
+        const form = document.getElementById('formRegistro')
+        const nombre = document.getElementById('nombre')
+        const email = document.getElementById('email')
+        const numTelefono = document.getElementById('numTelefono')
+        const contraseña = document.getElementById('contraseña')
+        const confirmContraseña = document.getElementById('confirmContraseña')
+        const messages = document.getElementById('messages')
+        const registro = document.getElementById('resgistrarse')
+
+        registro.addEventListener('click', e => {
+          e.preventDefault()
+          messages.innerHTML = ''
+
+          if (!nombre.checkValidity()) {
+            if (nombre.validity.valueMissing) {
+              // Si el campo está vacío
+              displayError('No puedes dejar este campo vacio')
+            }
+            nombre.focus()
+            return false
+          } else if (!/^[a-zA-Z]*$/.test(nombre.value)) {
+            // Si el campo contiene espacios o caracteres no válidos
+            displayError('El nombre no puede contener espacios')
+            nombre.focus()
+            return false
+          }
+
+          if (!email.checkValidity()) {
+            if (email.validity.valueMissing) {
+              // Si el campo está vacío
+              displayError('No puedes dejar este campo vacio')
+              email.focus()
+              return false
+            }
+          }
+          if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+            // Si el campo no contiene un correo electrónico válido
+            displayError('El correo electrónico no es válido')
+            email.focus()
+            return false
+          }
+
+          if (!numTelefono.checkValidity()) {
+            if (numTelefono.validity.valueMissing) {
+              // Si el campo está vacío
+              displayError('No puedes dejar este campo vacio')
+              numTelefono.focus()
+              return false
+            }
+          }
+
+          if (!/^\d{9}$/.test(numTelefono.value)) {
+            // Si el campo no contiene 9 dígitos
+            displayError('El número de teléfono debe contener 9 dígitos')
+            numTelefono.focus()
+            return false
+          }
+
+          if (!contraseña.checkValidity()) {
+            if (contraseña.validity.valueMissing) {
+              // Si el campo está vacío
+              displayError('No puedes dejar este campo vacio')
+              contraseña.focus()
+              return false
+            }
+          }
+
+          if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(contraseña.value)) {
+            // Si el campo no contiene al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número
+            displayError(
+              'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número'
+            )
+            contraseña.focus()
+            return false
+          }
+
+          if (!confirmContraseña.checkValidity()) {
+            if (confirmContraseña.validity.valueMissing) {
+              // Si el campo está vacío
+              displayError('No puedes dejar este campo vacio')
+              confirmContraseña.focus()
+              return false
+            }
+          }
+
+          if (confirmContraseña.value !== contraseña.value) {
+            // Si el campo no coincide con el campo de contraseña
+            displayError('Las contraseñas no coinciden')
+            confirmContraseña.focus()
+            return false
+          }
+
+          messages.innerHTML = 'Formulario enviado correctamente' // Mensaje de éxito
+          // form.submit() // si se quiere enviar el formulario descomentamos esta linea
+          // La dejo comentada para que se pueda visualizar el mensaje de éxito
+        })
+
+        function displayError(message) {
+          messages.textContent = message // Muestra el mensaje de error
+          messages.className = 'error' // Establece la clase del mensaje de error
+        }
+      })
+    </script>
+  </body>
+</html>
