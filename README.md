@@ -1,17 +1,19 @@
 # DWEC (Desarrollo Web Entorno de Cliente)
 
-- ## Repositorio para el curso 23-24 de Ian Burford
+## Repositorio para el curso 23-24 de Ian Burford
 
-  Las tecnologias utilizadas en este repositorio son HTML, CSS, JavaScript y MarkDown para realizar los apuntes/documentación.
+Las tecnologias utilizadas en este repositorio son HTML, CSS, JavaScript y MarkDown para realizar los apuntes/documentación.
+
+---
+
+## Teoria de JavaScript
+
+De la cual con JavaScript podras encontrar los apuntes realizados por mi en el siguiente icono:
+[![Documentancion de JavaScript](documentos/icon.svg)](documentos/JavaScript.md)
 
 ---
 
-- ## Teoria de JavaScript
-
-  De la cual con JavaScript podras encontrar los apuntes realizados por mi en el siguiente icono:
-  [![Documentancion de JavaScript](documentos/icon.svg)](documentos/JavaScript.md)
-
----
+# Apartado de Ejercicios
 
 - ## Ejercicios Tarea Continua
 
@@ -62,5 +64,78 @@
 
 ---
 
-- ## [Proyecto de Clase - Buscaminas](Ejercicios/Buscaminas/)
+- ## [BOM](Ejercicios/BOM/)
+
+  - ### [**_Eventos_**](Ejercicios/BOM/Eventos/)
+  - ### [**_Window_**](Ejercicios/BOM/Window/)
+
+---
+
+- ## [DOM](Ejercicios/DOM/)
+
+  - ### [**_8-01_**](Ejercicios/DOM/8-01/)
+  - ### [**_501Hermanos_**](Ejercicios/DOM/503Hermanos/)
+  - ### [**_Control de encios_**](Ejercicios/DOM/ControlEnvios/)
+  - ### [**_Lista de la Compra_**](Ejercicios/DOM/listaCompra/)
+  - ### [**_Material Ejercicios DOM 2_**](Ejercicios/DOM/Material%20Ejercicios%20Dom-20231219/)
+
+---
+
+- ## [CifradoPE](Ejercicios/CifradoPE/cifrado.js)
+
+---
+
+- ## [Papelera de Reciclaje](Ejercicios/PapeleraReciclaje/)
+
+---
+
+- ## [Validacion](Clase/Enero/Validacion/)
+
+  - ### [**_Validacion HTML/API_**](Clase/Enero/Validacion/)
+  - ### [**_Validacion en JS_**](Clase/Enero/Validacion/ValidacionJS.html)
+
+---
+
+- ## [Cookies, WebStorage y LocaleStorage](Clase/Enero/)
+
+---
+
+- ## [Promesas/async-await](Ejercicios/Promesas/)
+
+---
+
+- ## [Modulos](Clase/Febrero/Modulos/)
+
+---
+
+- ## [API](Clase/Febrero/Api1.html)
+
+---
+
+- ## [PokeApi](Clase/Febrero/pokeApi/)
+
+---
+
+- ## [Clases](Clase/Febrero/)
+
+  - ### [Ejemplo1](Clase/Febrero/ejemClases.js)
+  - ### [Ejemplo2](Clase/Febrero/clases.js)
+
+---
+
+- ## [Propagacion](Clase/Febrero/)
+
+  - ### [**_Propagacion_**](Clase/Febrero/propagacion.html)
+  - ### [**_Burbujeo_**](Clase/Febrero/burbujeo.html)
+
+---
+
+# Proyecto de Clase
+
+- ## [Buscaminas](Ejercicios/Buscaminas/)
   Enlace dirento a la carpeta donde se realizara a medida que avance el curso el Juego del Buscaminas desarrollado con HTML, CSS y JavaScript.
+  <h3>Terminado!!</h2>
+- ## Tareas
+  - ### [Practica 101](Ejercicios/Practica101/)
+  - ### [Practica 201](Ejercicios/Practica201/)
+  - ### [Practica 202](Ejercicios/Practica202/)
