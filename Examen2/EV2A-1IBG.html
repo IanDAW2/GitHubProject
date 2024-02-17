@@ -1,0 +1,45 @@
+<html lang="es">
+  <head>
+    <!-- Author: Ian Burford Gonzalez -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV2A-1IBG</title>
+    <!-- En una prueba contrarreloj, los 25 ciclistas participantes deben salir con una cadencia de 5 segundos en función del dorsal que llevan (el dorsal 1 saldrá 5 segundos después de la hora de salida, el dorsal 2, 10 segundos después de la hora de salida… y así sucesivamente . 
+En un pequeño monitor de su moderna bicicleta, el participante debe ver un mensaje con una cuenta atrás que empieza 3 segundos antes de salir  y la palabra ¡Salida! Después de la cuenta atrás para poder salir *. 
+Crea la aplicación salidaEtapa que debe instalar cada ciclista.
+ 
+	
+*Simulación de la pantalla
+
+Secuencia:  Dorsal 23  3 --- Dorsal 23 2 --- Dorsal 23 1 --- Dorsal 23 ¡salida! -->
+  </head>
+  <body>
+    <h1 id="texto"></h1>
+    <script>
+      const element = document.getElementById('texto')
+
+      for (let i = 1; i <= 25; i++) {
+        salidaEtapa(i)
+      }
+
+      function sleep(milisegundos) {
+        return new Promise(resolve => setTimeout(resolve, milisegundos))
+      } // Función para hacer una pausa con la promesa
+
+      async function salidaEtapa(dorsal) {
+        // Función asíncrona con async await
+        let startTime = dorsal * 5 * 1000 // Dependiendo del dorsal se multiplica por 5 segundos en milisegundos su tiempo de salida
+        var cuentaAtras = 3 // Cuenta atrás de 3 segundos para la salida
+
+        await sleep(startTime) // Esperar el tiempo de salida
+        element.textContent = `Dorsal ${dorsal} - ${cuentaAtras--}`
+        await sleep(1000)
+        element.textContent = `Dorsal ${dorsal} - ${cuentaAtras--}`
+        await sleep(1000)
+        element.textContent = `Dorsal ${dorsal} - ${cuentaAtras--}`
+        await sleep(1000)
+        element.textContent = `Dorsal ${dorsal} - ¡Salida!`
+      }
+    </script>
+  </body>
+</html>
