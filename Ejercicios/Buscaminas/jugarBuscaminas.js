@@ -1,3 +1,3 @@
-function calcularNumMinas(x,y) {
-  // proximamente
-}
+window.addEventListener('load', () => {
+  
+})

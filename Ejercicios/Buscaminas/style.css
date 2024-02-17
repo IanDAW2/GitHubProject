@@ -1,36 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color-scheme: dark light;
 }
 
 body,
 header {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
   justify-content: center;
   align-items: center;
 }
+
+header {
+  position: sticky;
+  z-index: 100;
+  padding: 0.3rem 0;
+  width: 100%;
+  height: fit-content;
+  background-color: rgba(212, 212, 212, 0.29);
+}
+
 main {
   height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 }
 
 .tabla {
   display: grid;
   background-color: black;
-  /* height: 100%;
-  width: 100%; */
-  /* grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr); */
+  gap: 1px;
 }
 .tabla button {
-  width: 30px;
-  height: 30px;
-  /* background-image: url('assets/mine-50.png');
-  background-size: cover; */
+  width: 40px;
+  height: 40px;
+}
+
+button {
+  font-weight: bold;
+  font-size: 100%;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
